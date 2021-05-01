@@ -1,3 +1,24 @@
 syntax = "proto3";
 
 option java_package = "com.project";
+
+service staffing
+{
+	rpc staffRequired(StaffCount) returns (APIResponse);
+}
+
+message StaffCount
+{
+	string doctors = 1;
+	string nurses = 2;
+}
+
+message APIResponse
+{
+	string responseText = 1;
+	int32 responseCode = 2;
+}
+
+message Empty
+{
+}
