@@ -14,45 +14,45 @@ public final class Staffing {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface StaffCountOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:StaffCount)
+  public interface TimeLevelOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:TimeLevel)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string doctors = 1;</code>
+     * <code>string time = 1;</code>
      */
-    java.lang.String getDoctors();
+    java.lang.String getTime();
     /**
-     * <code>string doctors = 1;</code>
+     * <code>string time = 1;</code>
      */
     com.google.protobuf.ByteString
-        getDoctorsBytes();
+        getTimeBytes();
 
     /**
-     * <code>string nurses = 2;</code>
+     * <code>string level = 2;</code>
      */
-    java.lang.String getNurses();
+    java.lang.String getLevel();
     /**
-     * <code>string nurses = 2;</code>
+     * <code>string level = 2;</code>
      */
     com.google.protobuf.ByteString
-        getNursesBytes();
+        getLevelBytes();
   }
   /**
-   * Protobuf type {@code StaffCount}
+   * Protobuf type {@code TimeLevel}
    */
-  public  static final class StaffCount extends
+  public  static final class TimeLevel extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:StaffCount)
-      StaffCountOrBuilder {
+      // @@protoc_insertion_point(message_implements:TimeLevel)
+      TimeLevelOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use StaffCount.newBuilder() to construct.
-    private StaffCount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use TimeLevel.newBuilder() to construct.
+    private TimeLevel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private StaffCount() {
-      doctors_ = "";
-      nurses_ = "";
+    private TimeLevel() {
+      time_ = "";
+      level_ = "";
     }
 
     @java.lang.Override
@@ -60,7 +60,7 @@ public final class Staffing {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private StaffCount(
+    private TimeLevel(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -82,13 +82,13 @@ public final class Staffing {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              doctors_ = s;
+              time_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              nurses_ = s;
+              level_ = s;
               break;
             }
             default: {
@@ -112,79 +112,79 @@ public final class Staffing {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.project.Staffing.internal_static_StaffCount_descriptor;
+      return com.project.Staffing.internal_static_TimeLevel_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.project.Staffing.internal_static_StaffCount_fieldAccessorTable
+      return com.project.Staffing.internal_static_TimeLevel_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.project.Staffing.StaffCount.class, com.project.Staffing.StaffCount.Builder.class);
+              com.project.Staffing.TimeLevel.class, com.project.Staffing.TimeLevel.Builder.class);
     }
 
-    public static final int DOCTORS_FIELD_NUMBER = 1;
-    private volatile java.lang.Object doctors_;
+    public static final int TIME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object time_;
     /**
-     * <code>string doctors = 1;</code>
+     * <code>string time = 1;</code>
      */
-    public java.lang.String getDoctors() {
-      java.lang.Object ref = doctors_;
+    public java.lang.String getTime() {
+      java.lang.Object ref = time_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        doctors_ = s;
+        time_ = s;
         return s;
       }
     }
     /**
-     * <code>string doctors = 1;</code>
+     * <code>string time = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getDoctorsBytes() {
-      java.lang.Object ref = doctors_;
+        getTimeBytes() {
+      java.lang.Object ref = time_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        doctors_ = b;
+        time_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int NURSES_FIELD_NUMBER = 2;
-    private volatile java.lang.Object nurses_;
+    public static final int LEVEL_FIELD_NUMBER = 2;
+    private volatile java.lang.Object level_;
     /**
-     * <code>string nurses = 2;</code>
+     * <code>string level = 2;</code>
      */
-    public java.lang.String getNurses() {
-      java.lang.Object ref = nurses_;
+    public java.lang.String getLevel() {
+      java.lang.Object ref = level_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        nurses_ = s;
+        level_ = s;
         return s;
       }
     }
     /**
-     * <code>string nurses = 2;</code>
+     * <code>string level = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getNursesBytes() {
-      java.lang.Object ref = nurses_;
+        getLevelBytes() {
+      java.lang.Object ref = level_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        nurses_ = b;
+        level_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -205,11 +205,11 @@ public final class Staffing {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getDoctorsBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, doctors_);
+      if (!getTimeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, time_);
       }
-      if (!getNursesBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nurses_);
+      if (!getLevelBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, level_);
       }
       unknownFields.writeTo(output);
     }
@@ -220,11 +220,11 @@ public final class Staffing {
       if (size != -1) return size;
 
       size = 0;
-      if (!getDoctorsBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, doctors_);
+      if (!getTimeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, time_);
       }
-      if (!getNursesBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nurses_);
+      if (!getLevelBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, level_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -236,16 +236,16 @@ public final class Staffing {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.project.Staffing.StaffCount)) {
+      if (!(obj instanceof com.project.Staffing.TimeLevel)) {
         return super.equals(obj);
       }
-      com.project.Staffing.StaffCount other = (com.project.Staffing.StaffCount) obj;
+      com.project.Staffing.TimeLevel other = (com.project.Staffing.TimeLevel) obj;
 
       boolean result = true;
-      result = result && getDoctors()
-          .equals(other.getDoctors());
-      result = result && getNurses()
-          .equals(other.getNurses());
+      result = result && getTime()
+          .equals(other.getTime());
+      result = result && getLevel()
+          .equals(other.getLevel());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -257,78 +257,78 @@ public final class Staffing {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DOCTORS_FIELD_NUMBER;
-      hash = (53 * hash) + getDoctors().hashCode();
-      hash = (37 * hash) + NURSES_FIELD_NUMBER;
-      hash = (53 * hash) + getNurses().hashCode();
+      hash = (37 * hash) + TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getTime().hashCode();
+      hash = (37 * hash) + LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + getLevel().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.project.Staffing.StaffCount parseFrom(
+    public static com.project.Staffing.TimeLevel parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.project.Staffing.StaffCount parseFrom(
+    public static com.project.Staffing.TimeLevel parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.project.Staffing.StaffCount parseFrom(
+    public static com.project.Staffing.TimeLevel parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.project.Staffing.StaffCount parseFrom(
+    public static com.project.Staffing.TimeLevel parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.project.Staffing.StaffCount parseFrom(byte[] data)
+    public static com.project.Staffing.TimeLevel parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.project.Staffing.StaffCount parseFrom(
+    public static com.project.Staffing.TimeLevel parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.project.Staffing.StaffCount parseFrom(java.io.InputStream input)
+    public static com.project.Staffing.TimeLevel parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.project.Staffing.StaffCount parseFrom(
+    public static com.project.Staffing.TimeLevel parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.project.Staffing.StaffCount parseDelimitedFrom(java.io.InputStream input)
+    public static com.project.Staffing.TimeLevel parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.project.Staffing.StaffCount parseDelimitedFrom(
+    public static com.project.Staffing.TimeLevel parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.project.Staffing.StaffCount parseFrom(
+    public static com.project.Staffing.TimeLevel parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.project.Staffing.StaffCount parseFrom(
+    public static com.project.Staffing.TimeLevel parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -341,7 +341,7 @@ public final class Staffing {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.project.Staffing.StaffCount prototype) {
+    public static Builder newBuilder(com.project.Staffing.TimeLevel prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -357,26 +357,26 @@ public final class Staffing {
       return builder;
     }
     /**
-     * Protobuf type {@code StaffCount}
+     * Protobuf type {@code TimeLevel}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:StaffCount)
-        com.project.Staffing.StaffCountOrBuilder {
+        // @@protoc_insertion_point(builder_implements:TimeLevel)
+        com.project.Staffing.TimeLevelOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.project.Staffing.internal_static_StaffCount_descriptor;
+        return com.project.Staffing.internal_static_TimeLevel_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.project.Staffing.internal_static_StaffCount_fieldAccessorTable
+        return com.project.Staffing.internal_static_TimeLevel_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.project.Staffing.StaffCount.class, com.project.Staffing.StaffCount.Builder.class);
+                com.project.Staffing.TimeLevel.class, com.project.Staffing.TimeLevel.Builder.class);
       }
 
-      // Construct using com.project.Staffing.StaffCount.newBuilder()
+      // Construct using com.project.Staffing.TimeLevel.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -394,9 +394,9 @@ public final class Staffing {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        doctors_ = "";
+        time_ = "";
 
-        nurses_ = "";
+        level_ = "";
 
         return this;
       }
@@ -404,17 +404,17 @@ public final class Staffing {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.project.Staffing.internal_static_StaffCount_descriptor;
+        return com.project.Staffing.internal_static_TimeLevel_descriptor;
       }
 
       @java.lang.Override
-      public com.project.Staffing.StaffCount getDefaultInstanceForType() {
-        return com.project.Staffing.StaffCount.getDefaultInstance();
+      public com.project.Staffing.TimeLevel getDefaultInstanceForType() {
+        return com.project.Staffing.TimeLevel.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.project.Staffing.StaffCount build() {
-        com.project.Staffing.StaffCount result = buildPartial();
+      public com.project.Staffing.TimeLevel build() {
+        com.project.Staffing.TimeLevel result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -422,10 +422,10 @@ public final class Staffing {
       }
 
       @java.lang.Override
-      public com.project.Staffing.StaffCount buildPartial() {
-        com.project.Staffing.StaffCount result = new com.project.Staffing.StaffCount(this);
-        result.doctors_ = doctors_;
-        result.nurses_ = nurses_;
+      public com.project.Staffing.TimeLevel buildPartial() {
+        com.project.Staffing.TimeLevel result = new com.project.Staffing.TimeLevel(this);
+        result.time_ = time_;
+        result.level_ = level_;
         onBuilt();
         return result;
       }
@@ -464,22 +464,22 @@ public final class Staffing {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.project.Staffing.StaffCount) {
-          return mergeFrom((com.project.Staffing.StaffCount)other);
+        if (other instanceof com.project.Staffing.TimeLevel) {
+          return mergeFrom((com.project.Staffing.TimeLevel)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.project.Staffing.StaffCount other) {
-        if (other == com.project.Staffing.StaffCount.getDefaultInstance()) return this;
-        if (!other.getDoctors().isEmpty()) {
-          doctors_ = other.doctors_;
+      public Builder mergeFrom(com.project.Staffing.TimeLevel other) {
+        if (other == com.project.Staffing.TimeLevel.getDefaultInstance()) return this;
+        if (!other.getTime().isEmpty()) {
+          time_ = other.time_;
           onChanged();
         }
-        if (!other.getNurses().isEmpty()) {
-          nurses_ = other.nurses_;
+        if (!other.getLevel().isEmpty()) {
+          level_ = other.level_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -497,11 +497,11 @@ public final class Staffing {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.project.Staffing.StaffCount parsedMessage = null;
+        com.project.Staffing.TimeLevel parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.project.Staffing.StaffCount) e.getUnfinishedMessage();
+          parsedMessage = (com.project.Staffing.TimeLevel) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -511,140 +511,140 @@ public final class Staffing {
         return this;
       }
 
-      private java.lang.Object doctors_ = "";
+      private java.lang.Object time_ = "";
       /**
-       * <code>string doctors = 1;</code>
+       * <code>string time = 1;</code>
        */
-      public java.lang.String getDoctors() {
-        java.lang.Object ref = doctors_;
+      public java.lang.String getTime() {
+        java.lang.Object ref = time_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          doctors_ = s;
+          time_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string doctors = 1;</code>
+       * <code>string time = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getDoctorsBytes() {
-        java.lang.Object ref = doctors_;
+          getTimeBytes() {
+        java.lang.Object ref = time_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          doctors_ = b;
+          time_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string doctors = 1;</code>
+       * <code>string time = 1;</code>
        */
-      public Builder setDoctors(
+      public Builder setTime(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        doctors_ = value;
+        time_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string doctors = 1;</code>
+       * <code>string time = 1;</code>
        */
-      public Builder clearDoctors() {
+      public Builder clearTime() {
         
-        doctors_ = getDefaultInstance().getDoctors();
+        time_ = getDefaultInstance().getTime();
         onChanged();
         return this;
       }
       /**
-       * <code>string doctors = 1;</code>
+       * <code>string time = 1;</code>
        */
-      public Builder setDoctorsBytes(
+      public Builder setTimeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        doctors_ = value;
+        time_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object nurses_ = "";
+      private java.lang.Object level_ = "";
       /**
-       * <code>string nurses = 2;</code>
+       * <code>string level = 2;</code>
        */
-      public java.lang.String getNurses() {
-        java.lang.Object ref = nurses_;
+      public java.lang.String getLevel() {
+        java.lang.Object ref = level_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          nurses_ = s;
+          level_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string nurses = 2;</code>
+       * <code>string level = 2;</code>
        */
       public com.google.protobuf.ByteString
-          getNursesBytes() {
-        java.lang.Object ref = nurses_;
+          getLevelBytes() {
+        java.lang.Object ref = level_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          nurses_ = b;
+          level_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string nurses = 2;</code>
+       * <code>string level = 2;</code>
        */
-      public Builder setNurses(
+      public Builder setLevel(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        nurses_ = value;
+        level_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string nurses = 2;</code>
+       * <code>string level = 2;</code>
        */
-      public Builder clearNurses() {
+      public Builder clearLevel() {
         
-        nurses_ = getDefaultInstance().getNurses();
+        level_ = getDefaultInstance().getLevel();
         onChanged();
         return this;
       }
       /**
-       * <code>string nurses = 2;</code>
+       * <code>string level = 2;</code>
        */
-      public Builder setNursesBytes(
+      public Builder setLevelBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        nurses_ = value;
+        level_ = value;
         onChanged();
         return this;
       }
@@ -661,41 +661,41 @@ public final class Staffing {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:StaffCount)
+      // @@protoc_insertion_point(builder_scope:TimeLevel)
     }
 
-    // @@protoc_insertion_point(class_scope:StaffCount)
-    private static final com.project.Staffing.StaffCount DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:TimeLevel)
+    private static final com.project.Staffing.TimeLevel DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.project.Staffing.StaffCount();
+      DEFAULT_INSTANCE = new com.project.Staffing.TimeLevel();
     }
 
-    public static com.project.Staffing.StaffCount getDefaultInstance() {
+    public static com.project.Staffing.TimeLevel getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<StaffCount>
-        PARSER = new com.google.protobuf.AbstractParser<StaffCount>() {
+    private static final com.google.protobuf.Parser<TimeLevel>
+        PARSER = new com.google.protobuf.AbstractParser<TimeLevel>() {
       @java.lang.Override
-      public StaffCount parsePartialFrom(
+      public TimeLevel parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new StaffCount(input, extensionRegistry);
+        return new TimeLevel(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<StaffCount> parser() {
+    public static com.google.protobuf.Parser<TimeLevel> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<StaffCount> getParserForType() {
+    public com.google.protobuf.Parser<TimeLevel> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.project.Staffing.StaffCount getDefaultInstanceForType() {
+    public com.project.Staffing.TimeLevel getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -706,19 +706,39 @@ public final class Staffing {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string responsetext = 1;</code>
+     * <code>string responseText = 1;</code>
      */
-    java.lang.String getResponsetext();
+    java.lang.String getResponseText();
     /**
-     * <code>string responsetext = 1;</code>
+     * <code>string responseText = 1;</code>
      */
     com.google.protobuf.ByteString
-        getResponsetextBytes();
+        getResponseTextBytes();
 
     /**
      * <code>int32 responseCode = 2;</code>
      */
     int getResponseCode();
+
+    /**
+     * <code>string doctors = 3;</code>
+     */
+    java.lang.String getDoctors();
+    /**
+     * <code>string doctors = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getDoctorsBytes();
+
+    /**
+     * <code>string nurses = 4;</code>
+     */
+    java.lang.String getNurses();
+    /**
+     * <code>string nurses = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getNursesBytes();
   }
   /**
    * Protobuf type {@code APIResponse}
@@ -733,8 +753,10 @@ public final class Staffing {
       super(builder);
     }
     private APIResponse() {
-      responsetext_ = "";
+      responseText_ = "";
       responseCode_ = 0;
+      doctors_ = "";
+      nurses_ = "";
     }
 
     @java.lang.Override
@@ -764,12 +786,24 @@ public final class Staffing {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              responsetext_ = s;
+              responseText_ = s;
               break;
             }
             case 16: {
 
               responseCode_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              doctors_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nurses_ = s;
               break;
             }
             default: {
@@ -805,33 +839,33 @@ public final class Staffing {
     }
 
     public static final int RESPONSETEXT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object responsetext_;
+    private volatile java.lang.Object responseText_;
     /**
-     * <code>string responsetext = 1;</code>
+     * <code>string responseText = 1;</code>
      */
-    public java.lang.String getResponsetext() {
-      java.lang.Object ref = responsetext_;
+    public java.lang.String getResponseText() {
+      java.lang.Object ref = responseText_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        responsetext_ = s;
+        responseText_ = s;
         return s;
       }
     }
     /**
-     * <code>string responsetext = 1;</code>
+     * <code>string responseText = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getResponsetextBytes() {
-      java.lang.Object ref = responsetext_;
+        getResponseTextBytes() {
+      java.lang.Object ref = responseText_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        responsetext_ = b;
+        responseText_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -845,6 +879,74 @@ public final class Staffing {
      */
     public int getResponseCode() {
       return responseCode_;
+    }
+
+    public static final int DOCTORS_FIELD_NUMBER = 3;
+    private volatile java.lang.Object doctors_;
+    /**
+     * <code>string doctors = 3;</code>
+     */
+    public java.lang.String getDoctors() {
+      java.lang.Object ref = doctors_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        doctors_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string doctors = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDoctorsBytes() {
+      java.lang.Object ref = doctors_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        doctors_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NURSES_FIELD_NUMBER = 4;
+    private volatile java.lang.Object nurses_;
+    /**
+     * <code>string nurses = 4;</code>
+     */
+    public java.lang.String getNurses() {
+      java.lang.Object ref = nurses_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nurses_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string nurses = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNursesBytes() {
+      java.lang.Object ref = nurses_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nurses_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -861,11 +963,17 @@ public final class Staffing {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getResponsetextBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, responsetext_);
+      if (!getResponseTextBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, responseText_);
       }
       if (responseCode_ != 0) {
         output.writeInt32(2, responseCode_);
+      }
+      if (!getDoctorsBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, doctors_);
+      }
+      if (!getNursesBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, nurses_);
       }
       unknownFields.writeTo(output);
     }
@@ -876,12 +984,18 @@ public final class Staffing {
       if (size != -1) return size;
 
       size = 0;
-      if (!getResponsetextBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, responsetext_);
+      if (!getResponseTextBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, responseText_);
       }
       if (responseCode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, responseCode_);
+      }
+      if (!getDoctorsBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, doctors_);
+      }
+      if (!getNursesBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, nurses_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -899,10 +1013,14 @@ public final class Staffing {
       com.project.Staffing.APIResponse other = (com.project.Staffing.APIResponse) obj;
 
       boolean result = true;
-      result = result && getResponsetext()
-          .equals(other.getResponsetext());
+      result = result && getResponseText()
+          .equals(other.getResponseText());
       result = result && (getResponseCode()
           == other.getResponseCode());
+      result = result && getDoctors()
+          .equals(other.getDoctors());
+      result = result && getNurses()
+          .equals(other.getNurses());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -915,9 +1033,13 @@ public final class Staffing {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + RESPONSETEXT_FIELD_NUMBER;
-      hash = (53 * hash) + getResponsetext().hashCode();
+      hash = (53 * hash) + getResponseText().hashCode();
       hash = (37 * hash) + RESPONSECODE_FIELD_NUMBER;
       hash = (53 * hash) + getResponseCode();
+      hash = (37 * hash) + DOCTORS_FIELD_NUMBER;
+      hash = (53 * hash) + getDoctors().hashCode();
+      hash = (37 * hash) + NURSES_FIELD_NUMBER;
+      hash = (53 * hash) + getNurses().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1051,9 +1173,13 @@ public final class Staffing {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        responsetext_ = "";
+        responseText_ = "";
 
         responseCode_ = 0;
+
+        doctors_ = "";
+
+        nurses_ = "";
 
         return this;
       }
@@ -1081,8 +1207,10 @@ public final class Staffing {
       @java.lang.Override
       public com.project.Staffing.APIResponse buildPartial() {
         com.project.Staffing.APIResponse result = new com.project.Staffing.APIResponse(this);
-        result.responsetext_ = responsetext_;
+        result.responseText_ = responseText_;
         result.responseCode_ = responseCode_;
+        result.doctors_ = doctors_;
+        result.nurses_ = nurses_;
         onBuilt();
         return result;
       }
@@ -1131,12 +1259,20 @@ public final class Staffing {
 
       public Builder mergeFrom(com.project.Staffing.APIResponse other) {
         if (other == com.project.Staffing.APIResponse.getDefaultInstance()) return this;
-        if (!other.getResponsetext().isEmpty()) {
-          responsetext_ = other.responsetext_;
+        if (!other.getResponseText().isEmpty()) {
+          responseText_ = other.responseText_;
           onChanged();
         }
         if (other.getResponseCode() != 0) {
           setResponseCode(other.getResponseCode());
+        }
+        if (!other.getDoctors().isEmpty()) {
+          doctors_ = other.doctors_;
+          onChanged();
+        }
+        if (!other.getNurses().isEmpty()) {
+          nurses_ = other.nurses_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1167,71 +1303,71 @@ public final class Staffing {
         return this;
       }
 
-      private java.lang.Object responsetext_ = "";
+      private java.lang.Object responseText_ = "";
       /**
-       * <code>string responsetext = 1;</code>
+       * <code>string responseText = 1;</code>
        */
-      public java.lang.String getResponsetext() {
-        java.lang.Object ref = responsetext_;
+      public java.lang.String getResponseText() {
+        java.lang.Object ref = responseText_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          responsetext_ = s;
+          responseText_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string responsetext = 1;</code>
+       * <code>string responseText = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getResponsetextBytes() {
-        java.lang.Object ref = responsetext_;
+          getResponseTextBytes() {
+        java.lang.Object ref = responseText_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          responsetext_ = b;
+          responseText_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string responsetext = 1;</code>
+       * <code>string responseText = 1;</code>
        */
-      public Builder setResponsetext(
+      public Builder setResponseText(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        responsetext_ = value;
+        responseText_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string responsetext = 1;</code>
+       * <code>string responseText = 1;</code>
        */
-      public Builder clearResponsetext() {
+      public Builder clearResponseText() {
         
-        responsetext_ = getDefaultInstance().getResponsetext();
+        responseText_ = getDefaultInstance().getResponseText();
         onChanged();
         return this;
       }
       /**
-       * <code>string responsetext = 1;</code>
+       * <code>string responseText = 1;</code>
        */
-      public Builder setResponsetextBytes(
+      public Builder setResponseTextBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        responsetext_ = value;
+        responseText_ = value;
         onChanged();
         return this;
       }
@@ -1258,6 +1394,144 @@ public final class Staffing {
       public Builder clearResponseCode() {
         
         responseCode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object doctors_ = "";
+      /**
+       * <code>string doctors = 3;</code>
+       */
+      public java.lang.String getDoctors() {
+        java.lang.Object ref = doctors_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          doctors_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string doctors = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDoctorsBytes() {
+        java.lang.Object ref = doctors_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          doctors_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string doctors = 3;</code>
+       */
+      public Builder setDoctors(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        doctors_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string doctors = 3;</code>
+       */
+      public Builder clearDoctors() {
+        
+        doctors_ = getDefaultInstance().getDoctors();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string doctors = 3;</code>
+       */
+      public Builder setDoctorsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        doctors_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object nurses_ = "";
+      /**
+       * <code>string nurses = 4;</code>
+       */
+      public java.lang.String getNurses() {
+        java.lang.Object ref = nurses_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          nurses_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string nurses = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNursesBytes() {
+        java.lang.Object ref = nurses_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nurses_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string nurses = 4;</code>
+       */
+      public Builder setNurses(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        nurses_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string nurses = 4;</code>
+       */
+      public Builder clearNurses() {
+        
+        nurses_ = getDefaultInstance().getNurses();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string nurses = 4;</code>
+       */
+      public Builder setNursesBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        nurses_ = value;
         onChanged();
         return this;
       }
@@ -1727,10 +2001,10 @@ public final class Staffing {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_StaffCount_descriptor;
+    internal_static_TimeLevel_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_StaffCount_fieldAccessorTable;
+      internal_static_TimeLevel_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_APIResponse_descriptor;
   private static final 
@@ -1750,12 +2024,12 @@ public final class Staffing {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\016staffing.proto\"-\n\nStaffCount\022\017\n\007doctor" +
-      "s\030\001 \001(\t\022\016\n\006nurses\030\002 \001(\t\"9\n\013APIResponse\022\024" +
-      "\n\014responsetext\030\001 \001(\t\022\024\n\014responseCode\030\002 \001" +
-      "(\005\"\007\n\005Empty26\n\010staffing\022*\n\rstaffRequired" +
-      "\022\013.StaffCount\032\014.APIResponseB\r\n\013com.proje" +
-      "ctb\006proto3"
+      "\n\016staffing.proto\"(\n\tTimeLevel\022\014\n\004time\030\001 " +
+      "\001(\t\022\r\n\005level\030\002 \001(\t\"Z\n\013APIResponse\022\024\n\014res" +
+      "ponseText\030\001 \001(\t\022\024\n\014responseCode\030\002 \001(\005\022\017\n" +
+      "\007doctors\030\003 \001(\t\022\016\n\006nurses\030\004 \001(\t\"\007\n\005Empty2" +
+      "5\n\010staffing\022)\n\rstaffRequired\022\n.TimeLevel" +
+      "\032\014.APIResponseB\r\n\013com.projectb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1769,18 +2043,18 @@ public final class Staffing {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_StaffCount_descriptor =
+    internal_static_TimeLevel_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_StaffCount_fieldAccessorTable = new
+    internal_static_TimeLevel_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_StaffCount_descriptor,
-        new java.lang.String[] { "Doctors", "Nurses", });
+        internal_static_TimeLevel_descriptor,
+        new java.lang.String[] { "Time", "Level", });
     internal_static_APIResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_APIResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_APIResponse_descriptor,
-        new java.lang.String[] { "Responsetext", "ResponseCode", });
+        new java.lang.String[] { "ResponseText", "ResponseCode", "Doctors", "Nurses", });
     internal_static_Empty_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_Empty_fieldAccessorTable = new

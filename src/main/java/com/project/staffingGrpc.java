@@ -27,28 +27,28 @@ public final class staffingGrpc {
   public static final String SERVICE_NAME = "staffing";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.project.Staffing.StaffCount,
+  private static volatile io.grpc.MethodDescriptor<com.project.Staffing.TimeLevel,
       com.project.Staffing.APIResponse> getStaffRequiredMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "staffRequired",
-      requestType = com.project.Staffing.StaffCount.class,
+      requestType = com.project.Staffing.TimeLevel.class,
       responseType = com.project.Staffing.APIResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.project.Staffing.StaffCount,
+  public static io.grpc.MethodDescriptor<com.project.Staffing.TimeLevel,
       com.project.Staffing.APIResponse> getStaffRequiredMethod() {
-    io.grpc.MethodDescriptor<com.project.Staffing.StaffCount, com.project.Staffing.APIResponse> getStaffRequiredMethod;
+    io.grpc.MethodDescriptor<com.project.Staffing.TimeLevel, com.project.Staffing.APIResponse> getStaffRequiredMethod;
     if ((getStaffRequiredMethod = staffingGrpc.getStaffRequiredMethod) == null) {
       synchronized (staffingGrpc.class) {
         if ((getStaffRequiredMethod = staffingGrpc.getStaffRequiredMethod) == null) {
           staffingGrpc.getStaffRequiredMethod = getStaffRequiredMethod = 
-              io.grpc.MethodDescriptor.<com.project.Staffing.StaffCount, com.project.Staffing.APIResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.project.Staffing.TimeLevel, com.project.Staffing.APIResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "staffing", "staffRequired"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.project.Staffing.StaffCount.getDefaultInstance()))
+                  com.project.Staffing.TimeLevel.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.project.Staffing.APIResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new staffingMethodDescriptorSupplier("staffRequired"))
@@ -88,7 +88,7 @@ public final class staffingGrpc {
 
     /**
      */
-    public void staffRequired(com.project.Staffing.StaffCount request,
+    public void staffRequired(com.project.Staffing.TimeLevel request,
         io.grpc.stub.StreamObserver<com.project.Staffing.APIResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getStaffRequiredMethod(), responseObserver);
     }
@@ -99,7 +99,7 @@ public final class staffingGrpc {
             getStaffRequiredMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.project.Staffing.StaffCount,
+                com.project.Staffing.TimeLevel,
                 com.project.Staffing.APIResponse>(
                   this, METHODID_STAFF_REQUIRED)))
           .build();
@@ -126,7 +126,7 @@ public final class staffingGrpc {
 
     /**
      */
-    public void staffRequired(com.project.Staffing.StaffCount request,
+    public void staffRequired(com.project.Staffing.TimeLevel request,
         io.grpc.stub.StreamObserver<com.project.Staffing.APIResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getStaffRequiredMethod(), getCallOptions()), request, responseObserver);
@@ -153,7 +153,7 @@ public final class staffingGrpc {
 
     /**
      */
-    public com.project.Staffing.APIResponse staffRequired(com.project.Staffing.StaffCount request) {
+    public com.project.Staffing.APIResponse staffRequired(com.project.Staffing.TimeLevel request) {
       return blockingUnaryCall(
           getChannel(), getStaffRequiredMethod(), getCallOptions(), request);
     }
@@ -180,7 +180,7 @@ public final class staffingGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.project.Staffing.APIResponse> staffRequired(
-        com.project.Staffing.StaffCount request) {
+        com.project.Staffing.TimeLevel request) {
       return futureUnaryCall(
           getChannel().newCall(getStaffRequiredMethod(), getCallOptions()), request);
     }
@@ -206,7 +206,7 @@ public final class staffingGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_STAFF_REQUIRED:
-          serviceImpl.staffRequired((com.project.Staffing.StaffCount) request,
+          serviceImpl.staffRequired((com.project.Staffing.TimeLevel) request,
               (io.grpc.stub.StreamObserver<com.project.Staffing.APIResponse>) responseObserver);
           break;
         default:

@@ -4,19 +4,21 @@ option java_package = "com.project";
 
 service staffing
 {
-	rpc staffRequired(StaffCount) returns (APIResponse);
+	rpc staffRequired(TimeLevel) returns (APIResponse);
 }
 
-message StaffCount
+message TimeLevel
 {
-	string doctors = 1;
-	string nurses = 2;
+	string time = 1;
+	string level = 2;
 }
 
 message APIResponse
 {
 	string responseText = 1;
 	int32 responseCode = 2;
+	string doctors = 3;
+	string nurses = 4;
 }
 
 message Empty
