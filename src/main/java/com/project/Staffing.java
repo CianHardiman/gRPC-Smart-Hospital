@@ -2028,7 +2028,7 @@ public final class Staffing {
       "\001(\t\022\r\n\005level\030\002 \001(\t\"Z\n\013APIResponse\022\024\n\014res" +
       "ponseText\030\001 \001(\t\022\024\n\014responseCode\030\002 \001(\005\022\017\n" +
       "\007doctors\030\003 \001(\t\022\016\n\006nurses\030\004 \001(\t\"\007\n\005Empty2" +
-      "5\n\010staffing\022)\n\rstaffRequired\022\n.TimeLevel" +
+      "5\n\010staffing\022)\n\rStaffRequired\022\n.TimeLevel" +
       "\032\014.APIResponseB\r\n\013com.projectb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

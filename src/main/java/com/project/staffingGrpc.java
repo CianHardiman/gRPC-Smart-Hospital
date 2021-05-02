@@ -31,7 +31,7 @@ public final class staffingGrpc {
       com.project.Staffing.APIResponse> getStaffRequiredMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "staffRequired",
+      fullMethodName = SERVICE_NAME + '/' + "StaffRequired",
       requestType = com.project.Staffing.TimeLevel.class,
       responseType = com.project.Staffing.APIResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -45,13 +45,13 @@ public final class staffingGrpc {
               io.grpc.MethodDescriptor.<com.project.Staffing.TimeLevel, com.project.Staffing.APIResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "staffing", "staffRequired"))
+                  "staffing", "StaffRequired"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.project.Staffing.TimeLevel.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.project.Staffing.APIResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new staffingMethodDescriptorSupplier("staffRequired"))
+                  .setSchemaDescriptor(new staffingMethodDescriptorSupplier("StaffRequired"))
                   .build();
           }
         }

@@ -4,7 +4,7 @@ option java_package = "com.project";
 
 service staffing
 {
-	rpc staffRequired(TimeLevel) returns (APIResponse);
+	rpc StaffRequired(TimeLevel) returns (APIResponse);
 }
 
 message TimeLevel
