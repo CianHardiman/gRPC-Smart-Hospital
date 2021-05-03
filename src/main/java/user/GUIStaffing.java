@@ -22,10 +22,11 @@ import com.project.*;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
-public class UserInterface implements ActionListener
+public class GUIStaffing implements ActionListener
 {
-
-
+		public static String text1;
+		public static String text2;
+		
 		private JTextField entry1, reply1;
 		private JTextField entry2, reply2;
 
@@ -39,7 +40,7 @@ public class UserInterface implements ActionListener
 			JLabel label = new JLabel("Enter Level")	;
 			panel.add(label);
 			panel.add(Box.createRigidArea(new Dimension(10, 0)));
-			entry1 = new JTextField("",10);
+			entry1 = new JTextField("");
 			panel.add(entry1);
 			panel.add(Box.createRigidArea(new Dimension(10, 0)));
 
@@ -48,14 +49,21 @@ public class UserInterface implements ActionListener
 			panel.add(button);
 			panel.add(Box.createRigidArea(new Dimension(10, 0)));
 
-			reply1 = new JTextField("", 10);
+			reply1 = new JTextField("");
 			reply1 .setEditable(false);
-			panel.add(reply1 );
-
+			panel.add(reply1);
+			
 			panel.setLayout(boxlayout);
-
+			
+			//setter for entry 1
+			text1 = entry1.getText();
+			text2 = reply1.getText();
+			
 			return panel;
+			
 
+			
+			
 		}
 
 		private JPanel getService2JPanel() {
@@ -78,7 +86,7 @@ public class UserInterface implements ActionListener
 		}
 		public static void main(String[] args) {
 
-			UserInterface gui = new UserInterface();
+			GUIStaffing gui = new GUIStaffing();
 
 			gui.build();
 		}
@@ -130,10 +138,13 @@ public class UserInterface implements ActionListener
 
 				//preparing message to send
 				Staffing.TimeLevel request1 = Staffing.TimeLevel.newBuilder().setTime(entry1.getText()).build();
+				text1 = entry1.getText();
+				
 				Staffing.TimeLevel request2 = Staffing.TimeLevel.newBuilder().setLevel(entry2.getText()).build();
 
 				//Retrieving reply from service
 				Staffing.APIResponse response1 = blockingStub.staffRequired(request1);
+				Staffing.APIResponse response2 = blockingStub.staffRequired(request2);
 
 				reply1.setText( String.valueOf(response1) );
 			

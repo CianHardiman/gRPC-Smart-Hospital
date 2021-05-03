@@ -27,7 +27,7 @@ public class UserStaffing extends staffingImplBase
 		
 		try 
 		{
-			timeNumber = Integer.parseInt(request.getTime());
+			timeNumber = Integer.parseInt(user.GUIStaffing.text1);
 		}
 		catch(Exception e) 
 		{
@@ -116,6 +116,10 @@ public class UserStaffing extends staffingImplBase
 			System.out.println("Level number relates to expected business");
 			System.out.println("Please enter a valid level number (1, 2 or 3)");
 			}
+		
+		System.out.println("Time is " + timeNumber);
+		System.out.println("Text1 is " + user.GUIStaffing.text1);
+		System.out.println("Text2 is " + user.GUIStaffing.text2);
 		
 		nursesNeeded = doctorsNeeded*2;
 	}
