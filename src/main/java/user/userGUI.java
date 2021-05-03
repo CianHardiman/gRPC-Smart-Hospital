@@ -17,6 +17,7 @@ public class userGUI extends staffingImplBase
 		int timeNumber = 0;
 		int nursesNeeded;
 		int doctorsNeeded = 0;
+	
 		
 		//set timeNumber
 		try 

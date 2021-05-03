@@ -1,3 +1,18 @@
 syntax = "proto3";
 
 option java_package = "com.project";
+
+service patientOrg
+{
+	rpc VacantBed(VacantBedInput) returns (VacantBedResponse);
+}
+
+message VacantBedInput
+{
+	int32 roomType = 1;
+}
+
+message VacantBedResponse
+{
+	int32 roomNumber = 1;
+}

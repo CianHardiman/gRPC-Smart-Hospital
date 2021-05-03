@@ -64,21 +64,12 @@ public class UserInterface implements ActionListener
 
 			BoxLayout boxlayout = new BoxLayout(panel, BoxLayout.X_AXIS);
 
-			JLabel label = new JLabel("Enter value")	;
+			JLabel label = new JLabel("Enter Time")	;
 			panel.add(label);
 			panel.add(Box.createRigidArea(new Dimension(10, 0)));
 			entry2 = new JTextField("",10);
 			panel.add(entry2);
 			panel.add(Box.createRigidArea(new Dimension(10, 0)));
-
-			JButton button = new JButton("Invoke Service 2");
-			button.addActionListener(this);
-			panel.add(button);
-			panel.add(Box.createRigidArea(new Dimension(10, 0)));
-
-			reply2 = new JTextField("", 10);
-			reply2 .setEditable(false);
-			panel.add(reply2 );
 
 			panel.setLayout(boxlayout);
 
@@ -138,12 +129,13 @@ public class UserInterface implements ActionListener
 				staffingGrpc.staffingBlockingStub blockingStub = staffingGrpc.newBlockingStub(channel);
 
 				//preparing message to send
-//				Staffing.TimeLevel request = Staffing.TimeLevel.newBuilder().setText(entry1.getText()).build();
+				Staffing.TimeLevel request1 = Staffing.TimeLevel.newBuilder().setTime(entry1.getText()).build();
+				Staffing.TimeLevel request2 = Staffing.TimeLevel.newBuilder().setLevel(entry2.getText()).build();
 
 				//Retrieving reply from service
-//				Staffing.APIResponse response = blockingStub.userGUI(request);
+				Staffing.APIResponse response1 = blockingStub.staffRequired(request1);
 
-//				reply1.setText( String.valueOf(response.getLength() ) );
+				reply1.setText( String.valueOf(response1) );
 			
 			}
 			else
