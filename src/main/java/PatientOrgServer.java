@@ -2,13 +2,13 @@ import java.io.IOException;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
-import user.UserStaffing;
+import user.UserPatientOrg;
 
-public class GRPCServer
+public class PatientOrgServer
 {
 	public static void main(String[] args) throws IOException, InterruptedException
 	{
-		Server server = ServerBuilder.forPort(50051).addService(new UserStaffing()).build();
+		Server server = ServerBuilder.forPort(50052).addService(new UserPatientOrg()).build();
 		
 		server.start();
 		

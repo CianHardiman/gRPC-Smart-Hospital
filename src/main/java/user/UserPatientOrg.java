@@ -15,7 +15,7 @@ public class UserPatientOrg extends patientOrgImplBase
 		
 		try 
 		{
-			roomTypeCode = request.getRoomType();
+			roomTypeCode = Integer.parseInt(request.getRoomType());
 		}
 		catch(Exception e) 
 		{

@@ -19,9 +19,14 @@ public final class PatientOrg {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 roomType = 1;</code>
+     * <code>string roomType = 1;</code>
      */
-    int getRoomType();
+    java.lang.String getRoomType();
+    /**
+     * <code>string roomType = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getRoomTypeBytes();
   }
   /**
    * Protobuf type {@code VacantBedInput}
@@ -36,7 +41,7 @@ public final class PatientOrg {
       super(builder);
     }
     private VacantBedInput() {
-      roomType_ = 0;
+      roomType_ = "";
     }
 
     @java.lang.Override
@@ -63,9 +68,10 @@ public final class PatientOrg {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              roomType_ = input.readInt32();
+              roomType_ = s;
               break;
             }
             default: {
@@ -101,12 +107,37 @@ public final class PatientOrg {
     }
 
     public static final int ROOMTYPE_FIELD_NUMBER = 1;
-    private int roomType_;
+    private volatile java.lang.Object roomType_;
     /**
-     * <code>int32 roomType = 1;</code>
+     * <code>string roomType = 1;</code>
      */
-    public int getRoomType() {
-      return roomType_;
+    public java.lang.String getRoomType() {
+      java.lang.Object ref = roomType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        roomType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string roomType = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRoomTypeBytes() {
+      java.lang.Object ref = roomType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        roomType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -123,8 +154,8 @@ public final class PatientOrg {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (roomType_ != 0) {
-        output.writeInt32(1, roomType_);
+      if (!getRoomTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, roomType_);
       }
       unknownFields.writeTo(output);
     }
@@ -135,9 +166,8 @@ public final class PatientOrg {
       if (size != -1) return size;
 
       size = 0;
-      if (roomType_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, roomType_);
+      if (!getRoomTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, roomType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -155,8 +185,8 @@ public final class PatientOrg {
       com.project.PatientOrg.VacantBedInput other = (com.project.PatientOrg.VacantBedInput) obj;
 
       boolean result = true;
-      result = result && (getRoomType()
-          == other.getRoomType());
+      result = result && getRoomType()
+          .equals(other.getRoomType());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -169,7 +199,7 @@ public final class PatientOrg {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ROOMTYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getRoomType();
+      hash = (53 * hash) + getRoomType().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -303,7 +333,7 @@ public final class PatientOrg {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        roomType_ = 0;
+        roomType_ = "";
 
         return this;
       }
@@ -380,8 +410,9 @@ public final class PatientOrg {
 
       public Builder mergeFrom(com.project.PatientOrg.VacantBedInput other) {
         if (other == com.project.PatientOrg.VacantBedInput.getDefaultInstance()) return this;
-        if (other.getRoomType() != 0) {
-          setRoomType(other.getRoomType());
+        if (!other.getRoomType().isEmpty()) {
+          roomType_ = other.roomType_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -412,28 +443,71 @@ public final class PatientOrg {
         return this;
       }
 
-      private int roomType_ ;
+      private java.lang.Object roomType_ = "";
       /**
-       * <code>int32 roomType = 1;</code>
+       * <code>string roomType = 1;</code>
        */
-      public int getRoomType() {
-        return roomType_;
+      public java.lang.String getRoomType() {
+        java.lang.Object ref = roomType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          roomType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>int32 roomType = 1;</code>
+       * <code>string roomType = 1;</code>
        */
-      public Builder setRoomType(int value) {
-        
+      public com.google.protobuf.ByteString
+          getRoomTypeBytes() {
+        java.lang.Object ref = roomType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          roomType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string roomType = 1;</code>
+       */
+      public Builder setRoomType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         roomType_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 roomType = 1;</code>
+       * <code>string roomType = 1;</code>
        */
       public Builder clearRoomType() {
         
-        roomType_ = 0;
+        roomType_ = getDefaultInstance().getRoomType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string roomType = 1;</code>
+       */
+      public Builder setRoomTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        roomType_ = value;
         onChanged();
         return this;
       }
@@ -1603,7 +1677,7 @@ public final class PatientOrg {
   static {
     java.lang.String[] descriptorData = {
       "\n\020patientOrg.proto\"\"\n\016VacantBedInput\022\020\n\010" +
-      "roomType\030\001 \001(\005\"S\n\021VacantBedResponse\022\024\n\014r" +
+      "roomType\030\001 \001(\t\"S\n\021VacantBedResponse\022\024\n\014r" +
       "esponseText\030\001 \001(\t\022\024\n\014responseCode\030\002 \001(\005\022" +
       "\022\n\nroomNumber\030\003 \001(\005\"\007\n\005Empty2>\n\npatientO" +
       "rg\0220\n\tVacantBed\022\017.VacantBedInput\032\022.Vacan" +

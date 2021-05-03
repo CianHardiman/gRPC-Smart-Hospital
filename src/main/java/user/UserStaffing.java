@@ -1,7 +1,11 @@
 package user;
+import java.io.IOException;
+
 import com.project.Staffing.*;
 import com.project.staffingGrpc.*;
 
+import io.grpc.Server;
+import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
 
 public class UserStaffing extends staffingImplBase
@@ -11,8 +15,9 @@ public class UserStaffing extends staffingImplBase
 	int nursesNeeded = 0;
 	int doctorsNeeded = 0;
 
-	public void StaffRequired(TimeLevel request, StreamObserver<APIResponse> responseObserver) 
+	public void staffRequired(TimeLevel request, StreamObserver<APIResponse> responseObserver) 
 	{
+		
 		System.out.println("Please enter Level and Time (Shift) number (1-3)");
 		System.out.println("Time 1 is 12AM-8AM, 2 is 8AM-4PM (Working Hours), 3 is 4PM-12AM");
 		System.out.println("Level 1 is quieter than usual, 2 is medium and 3 is busy");

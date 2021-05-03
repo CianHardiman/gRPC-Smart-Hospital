@@ -9,7 +9,7 @@ service patientOrg
 
 message VacantBedInput
 {
-	int32 roomType = 1;
+	string roomType = 1;
 }
 
 message VacantBedResponse

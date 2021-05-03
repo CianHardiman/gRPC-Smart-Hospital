@@ -10,7 +10,7 @@ public class UserInventory extends inventoryMgmtImplBase
 	int inventoryType = 0;
 	int inventoryAddSubtract = 0;
 	
-	public void inventoryMgmt(QuantityInput request, StreamObserver <QuantityOutput> responseObserver) 
+	public void inventoryChange(QuantityInput request, StreamObserver <QuantityOutput> responseObserver) 
 	{
 		
 		QuantityOutput.Builder response = QuantityOutput.newBuilder();
