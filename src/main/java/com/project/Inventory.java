@@ -19,14 +19,24 @@ public final class Inventory {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 inventoryType = 1;</code>
+     * <code>string inventoryType = 1;</code>
      */
-    int getInventoryType();
+    java.lang.String getInventoryType();
+    /**
+     * <code>string inventoryType = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getInventoryTypeBytes();
 
     /**
-     * <code>int32 inventoryAddSubtract = 2;</code>
+     * <code>string inventoryAddSubtract = 2;</code>
      */
-    int getInventoryAddSubtract();
+    java.lang.String getInventoryAddSubtract();
+    /**
+     * <code>string inventoryAddSubtract = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getInventoryAddSubtractBytes();
   }
   /**
    * Protobuf type {@code QuantityInput}
@@ -41,8 +51,8 @@ public final class Inventory {
       super(builder);
     }
     private QuantityInput() {
-      inventoryType_ = 0;
-      inventoryAddSubtract_ = 0;
+      inventoryType_ = "";
+      inventoryAddSubtract_ = "";
     }
 
     @java.lang.Override
@@ -69,14 +79,16 @@ public final class Inventory {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              inventoryType_ = input.readInt32();
+              inventoryType_ = s;
               break;
             }
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              inventoryAddSubtract_ = input.readInt32();
+              inventoryAddSubtract_ = s;
               break;
             }
             default: {
@@ -112,21 +124,71 @@ public final class Inventory {
     }
 
     public static final int INVENTORYTYPE_FIELD_NUMBER = 1;
-    private int inventoryType_;
+    private volatile java.lang.Object inventoryType_;
     /**
-     * <code>int32 inventoryType = 1;</code>
+     * <code>string inventoryType = 1;</code>
      */
-    public int getInventoryType() {
-      return inventoryType_;
+    public java.lang.String getInventoryType() {
+      java.lang.Object ref = inventoryType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        inventoryType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string inventoryType = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getInventoryTypeBytes() {
+      java.lang.Object ref = inventoryType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        inventoryType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int INVENTORYADDSUBTRACT_FIELD_NUMBER = 2;
-    private int inventoryAddSubtract_;
+    private volatile java.lang.Object inventoryAddSubtract_;
     /**
-     * <code>int32 inventoryAddSubtract = 2;</code>
+     * <code>string inventoryAddSubtract = 2;</code>
      */
-    public int getInventoryAddSubtract() {
-      return inventoryAddSubtract_;
+    public java.lang.String getInventoryAddSubtract() {
+      java.lang.Object ref = inventoryAddSubtract_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        inventoryAddSubtract_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string inventoryAddSubtract = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getInventoryAddSubtractBytes() {
+      java.lang.Object ref = inventoryAddSubtract_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        inventoryAddSubtract_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -143,11 +205,11 @@ public final class Inventory {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (inventoryType_ != 0) {
-        output.writeInt32(1, inventoryType_);
+      if (!getInventoryTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, inventoryType_);
       }
-      if (inventoryAddSubtract_ != 0) {
-        output.writeInt32(2, inventoryAddSubtract_);
+      if (!getInventoryAddSubtractBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, inventoryAddSubtract_);
       }
       unknownFields.writeTo(output);
     }
@@ -158,13 +220,11 @@ public final class Inventory {
       if (size != -1) return size;
 
       size = 0;
-      if (inventoryType_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, inventoryType_);
+      if (!getInventoryTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, inventoryType_);
       }
-      if (inventoryAddSubtract_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, inventoryAddSubtract_);
+      if (!getInventoryAddSubtractBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, inventoryAddSubtract_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -182,10 +242,10 @@ public final class Inventory {
       com.project.Inventory.QuantityInput other = (com.project.Inventory.QuantityInput) obj;
 
       boolean result = true;
-      result = result && (getInventoryType()
-          == other.getInventoryType());
-      result = result && (getInventoryAddSubtract()
-          == other.getInventoryAddSubtract());
+      result = result && getInventoryType()
+          .equals(other.getInventoryType());
+      result = result && getInventoryAddSubtract()
+          .equals(other.getInventoryAddSubtract());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -198,9 +258,9 @@ public final class Inventory {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + INVENTORYTYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getInventoryType();
+      hash = (53 * hash) + getInventoryType().hashCode();
       hash = (37 * hash) + INVENTORYADDSUBTRACT_FIELD_NUMBER;
-      hash = (53 * hash) + getInventoryAddSubtract();
+      hash = (53 * hash) + getInventoryAddSubtract().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -334,9 +394,9 @@ public final class Inventory {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        inventoryType_ = 0;
+        inventoryType_ = "";
 
-        inventoryAddSubtract_ = 0;
+        inventoryAddSubtract_ = "";
 
         return this;
       }
@@ -414,11 +474,13 @@ public final class Inventory {
 
       public Builder mergeFrom(com.project.Inventory.QuantityInput other) {
         if (other == com.project.Inventory.QuantityInput.getDefaultInstance()) return this;
-        if (other.getInventoryType() != 0) {
-          setInventoryType(other.getInventoryType());
+        if (!other.getInventoryType().isEmpty()) {
+          inventoryType_ = other.inventoryType_;
+          onChanged();
         }
-        if (other.getInventoryAddSubtract() != 0) {
-          setInventoryAddSubtract(other.getInventoryAddSubtract());
+        if (!other.getInventoryAddSubtract().isEmpty()) {
+          inventoryAddSubtract_ = other.inventoryAddSubtract_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -449,54 +511,140 @@ public final class Inventory {
         return this;
       }
 
-      private int inventoryType_ ;
+      private java.lang.Object inventoryType_ = "";
       /**
-       * <code>int32 inventoryType = 1;</code>
+       * <code>string inventoryType = 1;</code>
        */
-      public int getInventoryType() {
-        return inventoryType_;
+      public java.lang.String getInventoryType() {
+        java.lang.Object ref = inventoryType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          inventoryType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>int32 inventoryType = 1;</code>
+       * <code>string inventoryType = 1;</code>
        */
-      public Builder setInventoryType(int value) {
-        
+      public com.google.protobuf.ByteString
+          getInventoryTypeBytes() {
+        java.lang.Object ref = inventoryType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          inventoryType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string inventoryType = 1;</code>
+       */
+      public Builder setInventoryType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         inventoryType_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 inventoryType = 1;</code>
+       * <code>string inventoryType = 1;</code>
        */
       public Builder clearInventoryType() {
         
-        inventoryType_ = 0;
+        inventoryType_ = getDefaultInstance().getInventoryType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string inventoryType = 1;</code>
+       */
+      public Builder setInventoryTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        inventoryType_ = value;
         onChanged();
         return this;
       }
 
-      private int inventoryAddSubtract_ ;
+      private java.lang.Object inventoryAddSubtract_ = "";
       /**
-       * <code>int32 inventoryAddSubtract = 2;</code>
+       * <code>string inventoryAddSubtract = 2;</code>
        */
-      public int getInventoryAddSubtract() {
-        return inventoryAddSubtract_;
+      public java.lang.String getInventoryAddSubtract() {
+        java.lang.Object ref = inventoryAddSubtract_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          inventoryAddSubtract_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>int32 inventoryAddSubtract = 2;</code>
+       * <code>string inventoryAddSubtract = 2;</code>
        */
-      public Builder setInventoryAddSubtract(int value) {
-        
+      public com.google.protobuf.ByteString
+          getInventoryAddSubtractBytes() {
+        java.lang.Object ref = inventoryAddSubtract_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          inventoryAddSubtract_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string inventoryAddSubtract = 2;</code>
+       */
+      public Builder setInventoryAddSubtract(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         inventoryAddSubtract_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 inventoryAddSubtract = 2;</code>
+       * <code>string inventoryAddSubtract = 2;</code>
        */
       public Builder clearInventoryAddSubtract() {
         
-        inventoryAddSubtract_ = 0;
+        inventoryAddSubtract_ = getDefaultInstance().getInventoryAddSubtract();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string inventoryAddSubtract = 2;</code>
+       */
+      public Builder setInventoryAddSubtractBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        inventoryAddSubtract_ = value;
         onChanged();
         return this;
       }
@@ -2702,8 +2850,8 @@ public final class Inventory {
   static {
     java.lang.String[] descriptorData = {
       "\n\017inventory.proto\"D\n\rQuantityInput\022\025\n\rin" +
-      "ventoryType\030\001 \001(\005\022\034\n\024inventoryAddSubtrac" +
-      "t\030\002 \001(\005\"<\n\016QuantityOutput\022\024\n\014responseTex" +
+      "ventoryType\030\001 \001(\t\022\034\n\024inventoryAddSubtrac" +
+      "t\030\002 \001(\t\"<\n\016QuantityOutput\022\024\n\014responseTex" +
       "t\030\001 \001(\t\022\024\n\014responseCode\030\002 \001(\005\"%\n\014CountRe" +
       "quest\022\025\n\rinventoryType\030\001 \001(\005\";\n\rCountRes" +
       "ponse\022\024\n\014responseText\030\001 \001(\t\022\024\n\014responseC" +

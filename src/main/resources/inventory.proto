@@ -10,8 +10,8 @@ service inventoryMgmt
 
 message QuantityInput
 {
-	int32 inventoryType = 1;
-	int32 inventoryAddSubtract = 2;
+	string inventoryType = 1;
+	string inventoryAddSubtract = 2;
 }
 
 message QuantityOutput

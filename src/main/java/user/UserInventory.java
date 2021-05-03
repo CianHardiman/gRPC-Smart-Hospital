@@ -10,17 +10,74 @@ public class UserInventory extends inventoryMgmtImplBase
 	int inventoryType = 0;
 	int inventoryAddSubtract = 0;
 	
+	//create and set quantities of the inventory
+	int bandageQty = 1000;
+	int antibioticQty = 1000;
+	int vaccineQty = 1000;
+	int syringeQty = 1000;
+	int medicineQty = 1000;
+	
 	public void inventoryChange(QuantityInput request, StreamObserver <QuantityOutput> responseObserver) 
 	{
 		
 		QuantityOutput.Builder response = QuantityOutput.newBuilder();
 	
-		inventoryType = request.getInventoryType();
-		inventoryAddSubtract = request.getInventoryAddSubtract();
+		try
+		{
+			inventoryType = Integer.parseInt(request.getInventoryType());
+		}
+		catch(Exception e) 
+		{
+			System.out.println("Please enter room type as an number (1-5)");
+		}
 		
-		response.setResponseCode(1).setResponseText("inventory type:  " + inventoryType);
+		try
+		{
+		inventoryAddSubtract = Integer.parseInt(request.getInventoryAddSubtract());
+		}
+		catch(Exception e) 
+		{
+			System.out.println("Please enter the number of items you wish to add or take (Negative for subtract)");
+		}
+		
+		if (inventoryType==1)
+		{
+			bandageQty = bandageQty + inventoryAddSubtract;
+			response.setResponseCode(1).setResponseText("Remainging bandages: " + bandageQty);
+		}
+		else if (inventoryType==2)
+		{
+			antibioticQty = antibioticQty + inventoryAddSubtract;
+			response.setResponseCode(2).setResponseText("Remainging antibiotics: " + antibioticQty);
+		}
+		else if (inventoryType==3)
+		{
+			vaccineQty = vaccineQty + inventoryAddSubtract;
+			response.setResponseCode(3).setResponseText("Remainging vaccines: " + vaccineQty);
+		}
+		else if (inventoryType==4)
+		{
+			syringeQty = syringeQty + inventoryAddSubtract;
+			response.setResponseCode(4).setResponseText("Remainging syringes: " + syringeQty);
+		}
+		else if (inventoryType==5)
+		{
+			medicineQty = medicineQty + inventoryAddSubtract;
+			response.setResponseCode(5).setResponseText("Remainging medicine: " + medicineQty);
+		}
+		else
+		{
+			response.setResponseCode(6).setResponseText("Please enter the item code (1-5) and the number you wish to add or subtract (subtract being negative)");
+		}
+		
+		if (bandageQty<0 || antibioticQty<0 || vaccineQty<0 || syringeQty<0 || medicineQty<0)
+		{
+			response.setResponseCode(7).setResponseText("Please be advised that you have reduced by more than what is in stock");
+		}
+
 		
 		responseObserver.onNext(response.build());
 		responseObserver.onCompleted();
 	}
+
 }
