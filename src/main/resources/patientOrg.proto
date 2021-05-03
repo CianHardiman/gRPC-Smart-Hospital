@@ -14,5 +14,11 @@ message VacantBedInput
 
 message VacantBedResponse
 {
-	int32 roomNumber = 1;
+	string responseText = 1;
+	int32 responseCode = 2;
+	int32 roomNumber = 3;
+}
+
+message Empty
+{
 }

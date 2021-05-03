@@ -495,7 +495,22 @@ public final class PatientOrg {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 roomNumber = 1;</code>
+     * <code>string responseText = 1;</code>
+     */
+    java.lang.String getResponseText();
+    /**
+     * <code>string responseText = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getResponseTextBytes();
+
+    /**
+     * <code>int32 responseCode = 2;</code>
+     */
+    int getResponseCode();
+
+    /**
+     * <code>int32 roomNumber = 3;</code>
      */
     int getRoomNumber();
   }
@@ -512,6 +527,8 @@ public final class PatientOrg {
       super(builder);
     }
     private VacantBedResponse() {
+      responseText_ = "";
+      responseCode_ = 0;
       roomNumber_ = 0;
     }
 
@@ -539,7 +556,18 @@ public final class PatientOrg {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              responseText_ = s;
+              break;
+            }
+            case 16: {
+
+              responseCode_ = input.readInt32();
+              break;
+            }
+            case 24: {
 
               roomNumber_ = input.readInt32();
               break;
@@ -576,10 +604,53 @@ public final class PatientOrg {
               com.project.PatientOrg.VacantBedResponse.class, com.project.PatientOrg.VacantBedResponse.Builder.class);
     }
 
-    public static final int ROOMNUMBER_FIELD_NUMBER = 1;
+    public static final int RESPONSETEXT_FIELD_NUMBER = 1;
+    private volatile java.lang.Object responseText_;
+    /**
+     * <code>string responseText = 1;</code>
+     */
+    public java.lang.String getResponseText() {
+      java.lang.Object ref = responseText_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        responseText_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string responseText = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResponseTextBytes() {
+      java.lang.Object ref = responseText_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        responseText_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RESPONSECODE_FIELD_NUMBER = 2;
+    private int responseCode_;
+    /**
+     * <code>int32 responseCode = 2;</code>
+     */
+    public int getResponseCode() {
+      return responseCode_;
+    }
+
+    public static final int ROOMNUMBER_FIELD_NUMBER = 3;
     private int roomNumber_;
     /**
-     * <code>int32 roomNumber = 1;</code>
+     * <code>int32 roomNumber = 3;</code>
      */
     public int getRoomNumber() {
       return roomNumber_;
@@ -599,8 +670,14 @@ public final class PatientOrg {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getResponseTextBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, responseText_);
+      }
+      if (responseCode_ != 0) {
+        output.writeInt32(2, responseCode_);
+      }
       if (roomNumber_ != 0) {
-        output.writeInt32(1, roomNumber_);
+        output.writeInt32(3, roomNumber_);
       }
       unknownFields.writeTo(output);
     }
@@ -611,9 +688,16 @@ public final class PatientOrg {
       if (size != -1) return size;
 
       size = 0;
+      if (!getResponseTextBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, responseText_);
+      }
+      if (responseCode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, responseCode_);
+      }
       if (roomNumber_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, roomNumber_);
+          .computeInt32Size(3, roomNumber_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -631,6 +715,10 @@ public final class PatientOrg {
       com.project.PatientOrg.VacantBedResponse other = (com.project.PatientOrg.VacantBedResponse) obj;
 
       boolean result = true;
+      result = result && getResponseText()
+          .equals(other.getResponseText());
+      result = result && (getResponseCode()
+          == other.getResponseCode());
       result = result && (getRoomNumber()
           == other.getRoomNumber());
       result = result && unknownFields.equals(other.unknownFields);
@@ -644,6 +732,10 @@ public final class PatientOrg {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RESPONSETEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getResponseText().hashCode();
+      hash = (37 * hash) + RESPONSECODE_FIELD_NUMBER;
+      hash = (53 * hash) + getResponseCode();
       hash = (37 * hash) + ROOMNUMBER_FIELD_NUMBER;
       hash = (53 * hash) + getRoomNumber();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -779,6 +871,10 @@ public final class PatientOrg {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        responseText_ = "";
+
+        responseCode_ = 0;
+
         roomNumber_ = 0;
 
         return this;
@@ -807,6 +903,8 @@ public final class PatientOrg {
       @java.lang.Override
       public com.project.PatientOrg.VacantBedResponse buildPartial() {
         com.project.PatientOrg.VacantBedResponse result = new com.project.PatientOrg.VacantBedResponse(this);
+        result.responseText_ = responseText_;
+        result.responseCode_ = responseCode_;
         result.roomNumber_ = roomNumber_;
         onBuilt();
         return result;
@@ -856,6 +954,13 @@ public final class PatientOrg {
 
       public Builder mergeFrom(com.project.PatientOrg.VacantBedResponse other) {
         if (other == com.project.PatientOrg.VacantBedResponse.getDefaultInstance()) return this;
+        if (!other.getResponseText().isEmpty()) {
+          responseText_ = other.responseText_;
+          onChanged();
+        }
+        if (other.getResponseCode() != 0) {
+          setResponseCode(other.getResponseCode());
+        }
         if (other.getRoomNumber() != 0) {
           setRoomNumber(other.getRoomNumber());
         }
@@ -888,15 +993,110 @@ public final class PatientOrg {
         return this;
       }
 
+      private java.lang.Object responseText_ = "";
+      /**
+       * <code>string responseText = 1;</code>
+       */
+      public java.lang.String getResponseText() {
+        java.lang.Object ref = responseText_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          responseText_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string responseText = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResponseTextBytes() {
+        java.lang.Object ref = responseText_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          responseText_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string responseText = 1;</code>
+       */
+      public Builder setResponseText(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        responseText_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string responseText = 1;</code>
+       */
+      public Builder clearResponseText() {
+        
+        responseText_ = getDefaultInstance().getResponseText();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string responseText = 1;</code>
+       */
+      public Builder setResponseTextBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        responseText_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int responseCode_ ;
+      /**
+       * <code>int32 responseCode = 2;</code>
+       */
+      public int getResponseCode() {
+        return responseCode_;
+      }
+      /**
+       * <code>int32 responseCode = 2;</code>
+       */
+      public Builder setResponseCode(int value) {
+        
+        responseCode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 responseCode = 2;</code>
+       */
+      public Builder clearResponseCode() {
+        
+        responseCode_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int roomNumber_ ;
       /**
-       * <code>int32 roomNumber = 1;</code>
+       * <code>int32 roomNumber = 3;</code>
        */
       public int getRoomNumber() {
         return roomNumber_;
       }
       /**
-       * <code>int32 roomNumber = 1;</code>
+       * <code>int32 roomNumber = 3;</code>
        */
       public Builder setRoomNumber(int value) {
         
@@ -905,7 +1105,7 @@ public final class PatientOrg {
         return this;
       }
       /**
-       * <code>int32 roomNumber = 1;</code>
+       * <code>int32 roomNumber = 3;</code>
        */
       public Builder clearRoomNumber() {
         
@@ -966,6 +1166,418 @@ public final class PatientOrg {
 
   }
 
+  public interface EmptyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Empty)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code Empty}
+   */
+  public  static final class Empty extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:Empty)
+      EmptyOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Empty.newBuilder() to construct.
+    private Empty(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Empty() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Empty(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.project.PatientOrg.internal_static_Empty_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.project.PatientOrg.internal_static_Empty_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.project.PatientOrg.Empty.class, com.project.PatientOrg.Empty.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.project.PatientOrg.Empty)) {
+        return super.equals(obj);
+      }
+      com.project.PatientOrg.Empty other = (com.project.PatientOrg.Empty) obj;
+
+      boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.project.PatientOrg.Empty parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.project.PatientOrg.Empty parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.project.PatientOrg.Empty parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.project.PatientOrg.Empty parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.project.PatientOrg.Empty parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.project.PatientOrg.Empty parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.project.PatientOrg.Empty parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.project.PatientOrg.Empty parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.project.PatientOrg.Empty parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.project.PatientOrg.Empty parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.project.PatientOrg.Empty parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.project.PatientOrg.Empty parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.project.PatientOrg.Empty prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code Empty}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:Empty)
+        com.project.PatientOrg.EmptyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.project.PatientOrg.internal_static_Empty_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.project.PatientOrg.internal_static_Empty_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.project.PatientOrg.Empty.class, com.project.PatientOrg.Empty.Builder.class);
+      }
+
+      // Construct using com.project.PatientOrg.Empty.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.project.PatientOrg.internal_static_Empty_descriptor;
+      }
+
+      @java.lang.Override
+      public com.project.PatientOrg.Empty getDefaultInstanceForType() {
+        return com.project.PatientOrg.Empty.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.project.PatientOrg.Empty build() {
+        com.project.PatientOrg.Empty result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.project.PatientOrg.Empty buildPartial() {
+        com.project.PatientOrg.Empty result = new com.project.PatientOrg.Empty(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.project.PatientOrg.Empty) {
+          return mergeFrom((com.project.PatientOrg.Empty)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.project.PatientOrg.Empty other) {
+        if (other == com.project.PatientOrg.Empty.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.project.PatientOrg.Empty parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.project.PatientOrg.Empty) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:Empty)
+    }
+
+    // @@protoc_insertion_point(class_scope:Empty)
+    private static final com.project.PatientOrg.Empty DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.project.PatientOrg.Empty();
+    }
+
+    public static com.project.PatientOrg.Empty getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Empty>
+        PARSER = new com.google.protobuf.AbstractParser<Empty>() {
+      @java.lang.Override
+      public Empty parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Empty(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Empty> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Empty> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.project.PatientOrg.Empty getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_VacantBedInput_descriptor;
   private static final 
@@ -976,6 +1588,11 @@ public final class PatientOrg {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_VacantBedResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Empty_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Empty_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -986,10 +1603,11 @@ public final class PatientOrg {
   static {
     java.lang.String[] descriptorData = {
       "\n\020patientOrg.proto\"\"\n\016VacantBedInput\022\020\n\010" +
-      "roomType\030\001 \001(\005\"\'\n\021VacantBedResponse\022\022\n\nr" +
-      "oomNumber\030\001 \001(\0052>\n\npatientOrg\0220\n\tVacantB" +
-      "ed\022\017.VacantBedInput\032\022.VacantBedResponseB" +
-      "\r\n\013com.projectb\006proto3"
+      "roomType\030\001 \001(\005\"S\n\021VacantBedResponse\022\024\n\014r" +
+      "esponseText\030\001 \001(\t\022\024\n\014responseCode\030\002 \001(\005\022" +
+      "\022\n\nroomNumber\030\003 \001(\005\"\007\n\005Empty2>\n\npatientO" +
+      "rg\0220\n\tVacantBed\022\017.VacantBedInput\032\022.Vacan" +
+      "tBedResponseB\r\n\013com.projectb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1014,7 +1632,13 @@ public final class PatientOrg {
     internal_static_VacantBedResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_VacantBedResponse_descriptor,
-        new java.lang.String[] { "RoomNumber", });
+        new java.lang.String[] { "ResponseText", "ResponseCode", "RoomNumber", });
+    internal_static_Empty_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_Empty_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Empty_descriptor,
+        new java.lang.String[] { });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

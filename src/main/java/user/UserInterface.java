@@ -125,7 +125,7 @@ public class UserInterface implements ActionListener
 				/*
 				 * 
 				 */
-				ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50052).usePlaintext().build();
+				ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50051).usePlaintext().build();
 				staffingGrpc.staffingBlockingStub blockingStub = staffingGrpc.newBlockingStub(channel);
 
 				//preparing message to send

@@ -11,7 +11,7 @@ public class UserStaffing extends staffingImplBase
 	int nursesNeeded = 0;
 	int doctorsNeeded = 0;
 
-	public void staffRequired(TimeLevel request, StreamObserver<APIResponse> responseObserver) 
+	public void StaffRequired(TimeLevel request, StreamObserver<APIResponse> responseObserver) 
 	{
 		System.out.println("Please enter Level and Time (Shift) number (1-3)");
 		System.out.println("Time 1 is 12AM-8AM, 2 is 8AM-4PM (Working Hours), 3 is 4PM-12AM");
@@ -53,8 +53,8 @@ public class UserStaffing extends staffingImplBase
 		
 		responseObserver.onNext(response.build());
 		responseObserver.onCompleted();
-		
 	}
+	
 	public void staffRequiredFunction()
 	{
 			

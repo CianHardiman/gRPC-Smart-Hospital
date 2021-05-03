@@ -1,3 +1,36 @@
 syntax = "proto3";
 
 option java_package = "com.project";
+
+service inventoryMgmt
+{
+	rpc InventoryChange (QuantityInput) returns (QuantityOutput);
+	rpc InventoryCount (CountRequest) returns (CountResponse);
+}
+
+message QuantityInput
+{
+	int32 inventoryType = 1;
+	int32 inventoryAddSubtract = 2;
+}
+
+message QuantityOutput
+{
+	string responseText = 1;
+	int32 responseCode = 2;
+}
+
+message CountRequest
+{
+	int32 inventoryType = 1;
+}
+
+message CountResponse
+{
+	string responseText = 1;
+	int32 responseCode = 2;
+}
+
+message Empty
+{
+}
