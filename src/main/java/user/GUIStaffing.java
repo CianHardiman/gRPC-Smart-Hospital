@@ -16,8 +16,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import com.project.staffingGrpc;
-
 import com.project.*;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;

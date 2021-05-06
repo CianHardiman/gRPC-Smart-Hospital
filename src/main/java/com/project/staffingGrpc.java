@@ -20,38 +20,38 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 @javax.annotation.processing.Generated(
     value = "by gRPC proto compiler (version 1.15.0)",
     comments = "Source: staffing.proto")
-public final class staffingGrpc {
+public final class StaffingGrpc {
 
-  private staffingGrpc() {}
+  private StaffingGrpc() {}
 
-  public static final String SERVICE_NAME = "staffing";
+  public static final String SERVICE_NAME = "project.Staffing";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.project.Staffing.TimeLevel,
-      com.project.Staffing.APIResponse> getStaffRequiredMethod;
+  private static volatile io.grpc.MethodDescriptor<com.project.TimeLevel,
+      com.project.APIResponse> getStaffRequiredMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "StaffRequired",
-      requestType = com.project.Staffing.TimeLevel.class,
-      responseType = com.project.Staffing.APIResponse.class,
+      requestType = com.project.TimeLevel.class,
+      responseType = com.project.APIResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.project.Staffing.TimeLevel,
-      com.project.Staffing.APIResponse> getStaffRequiredMethod() {
-    io.grpc.MethodDescriptor<com.project.Staffing.TimeLevel, com.project.Staffing.APIResponse> getStaffRequiredMethod;
-    if ((getStaffRequiredMethod = staffingGrpc.getStaffRequiredMethod) == null) {
-      synchronized (staffingGrpc.class) {
-        if ((getStaffRequiredMethod = staffingGrpc.getStaffRequiredMethod) == null) {
-          staffingGrpc.getStaffRequiredMethod = getStaffRequiredMethod = 
-              io.grpc.MethodDescriptor.<com.project.Staffing.TimeLevel, com.project.Staffing.APIResponse>newBuilder()
+  public static io.grpc.MethodDescriptor<com.project.TimeLevel,
+      com.project.APIResponse> getStaffRequiredMethod() {
+    io.grpc.MethodDescriptor<com.project.TimeLevel, com.project.APIResponse> getStaffRequiredMethod;
+    if ((getStaffRequiredMethod = StaffingGrpc.getStaffRequiredMethod) == null) {
+      synchronized (StaffingGrpc.class) {
+        if ((getStaffRequiredMethod = StaffingGrpc.getStaffRequiredMethod) == null) {
+          StaffingGrpc.getStaffRequiredMethod = getStaffRequiredMethod = 
+              io.grpc.MethodDescriptor.<com.project.TimeLevel, com.project.APIResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "staffing", "StaffRequired"))
+                  "project.Staffing", "StaffRequired"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.project.Staffing.TimeLevel.getDefaultInstance()))
+                  com.project.TimeLevel.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.project.Staffing.APIResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new staffingMethodDescriptorSupplier("StaffRequired"))
+                  com.project.APIResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new StaffingMethodDescriptorSupplier("StaffRequired"))
                   .build();
           }
         }
@@ -62,34 +62,34 @@ public final class staffingGrpc {
   /**
    * Creates a new async stub that supports all call types for the service
    */
-  public static staffingStub newStub(io.grpc.Channel channel) {
-    return new staffingStub(channel);
+  public static StaffingStub newStub(io.grpc.Channel channel) {
+    return new StaffingStub(channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
-  public static staffingBlockingStub newBlockingStub(
+  public static StaffingBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new staffingBlockingStub(channel);
+    return new StaffingBlockingStub(channel);
   }
 
   /**
    * Creates a new ListenableFuture-style stub that supports unary calls on the service
    */
-  public static staffingFutureStub newFutureStub(
+  public static StaffingFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new staffingFutureStub(channel);
+    return new StaffingFutureStub(channel);
   }
 
   /**
    */
-  public static abstract class staffingImplBase implements io.grpc.BindableService {
+  public static abstract class StaffingImplBase implements io.grpc.BindableService {
 
     /**
      */
-    public void staffRequired(com.project.Staffing.TimeLevel request,
-        io.grpc.stub.StreamObserver<com.project.Staffing.APIResponse> responseObserver) {
+    public void staffRequired(com.project.TimeLevel request,
+        io.grpc.stub.StreamObserver<com.project.APIResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getStaffRequiredMethod(), responseObserver);
     }
 
@@ -99,8 +99,8 @@ public final class staffingGrpc {
             getStaffRequiredMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.project.Staffing.TimeLevel,
-                com.project.Staffing.APIResponse>(
+                com.project.TimeLevel,
+                com.project.APIResponse>(
                   this, METHODID_STAFF_REQUIRED)))
           .build();
     }
@@ -108,26 +108,26 @@ public final class staffingGrpc {
 
   /**
    */
-  public static final class staffingStub extends io.grpc.stub.AbstractStub<staffingStub> {
-    private staffingStub(io.grpc.Channel channel) {
+  public static final class StaffingStub extends io.grpc.stub.AbstractStub<StaffingStub> {
+    private StaffingStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private staffingStub(io.grpc.Channel channel,
+    private StaffingStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected staffingStub build(io.grpc.Channel channel,
+    protected StaffingStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new staffingStub(channel, callOptions);
+      return new StaffingStub(channel, callOptions);
     }
 
     /**
      */
-    public void staffRequired(com.project.Staffing.TimeLevel request,
-        io.grpc.stub.StreamObserver<com.project.Staffing.APIResponse> responseObserver) {
+    public void staffRequired(com.project.TimeLevel request,
+        io.grpc.stub.StreamObserver<com.project.APIResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getStaffRequiredMethod(), getCallOptions()), request, responseObserver);
     }
@@ -135,25 +135,25 @@ public final class staffingGrpc {
 
   /**
    */
-  public static final class staffingBlockingStub extends io.grpc.stub.AbstractStub<staffingBlockingStub> {
-    private staffingBlockingStub(io.grpc.Channel channel) {
+  public static final class StaffingBlockingStub extends io.grpc.stub.AbstractStub<StaffingBlockingStub> {
+    private StaffingBlockingStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private staffingBlockingStub(io.grpc.Channel channel,
+    private StaffingBlockingStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected staffingBlockingStub build(io.grpc.Channel channel,
+    protected StaffingBlockingStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new staffingBlockingStub(channel, callOptions);
+      return new StaffingBlockingStub(channel, callOptions);
     }
 
     /**
      */
-    public com.project.Staffing.APIResponse staffRequired(com.project.Staffing.TimeLevel request) {
+    public com.project.APIResponse staffRequired(com.project.TimeLevel request) {
       return blockingUnaryCall(
           getChannel(), getStaffRequiredMethod(), getCallOptions(), request);
     }
@@ -161,26 +161,26 @@ public final class staffingGrpc {
 
   /**
    */
-  public static final class staffingFutureStub extends io.grpc.stub.AbstractStub<staffingFutureStub> {
-    private staffingFutureStub(io.grpc.Channel channel) {
+  public static final class StaffingFutureStub extends io.grpc.stub.AbstractStub<StaffingFutureStub> {
+    private StaffingFutureStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private staffingFutureStub(io.grpc.Channel channel,
+    private StaffingFutureStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected staffingFutureStub build(io.grpc.Channel channel,
+    protected StaffingFutureStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new staffingFutureStub(channel, callOptions);
+      return new StaffingFutureStub(channel, callOptions);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.project.Staffing.APIResponse> staffRequired(
-        com.project.Staffing.TimeLevel request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.project.APIResponse> staffRequired(
+        com.project.TimeLevel request) {
       return futureUnaryCall(
           getChannel().newCall(getStaffRequiredMethod(), getCallOptions()), request);
     }
@@ -193,10 +193,10 @@ public final class staffingGrpc {
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final staffingImplBase serviceImpl;
+    private final StaffingImplBase serviceImpl;
     private final int methodId;
 
-    MethodHandlers(staffingImplBase serviceImpl, int methodId) {
+    MethodHandlers(StaffingImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -206,8 +206,8 @@ public final class staffingGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_STAFF_REQUIRED:
-          serviceImpl.staffRequired((com.project.Staffing.TimeLevel) request,
-              (io.grpc.stub.StreamObserver<com.project.Staffing.APIResponse>) responseObserver);
+          serviceImpl.staffRequired((com.project.TimeLevel) request,
+              (io.grpc.stub.StreamObserver<com.project.APIResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -225,32 +225,32 @@ public final class staffingGrpc {
     }
   }
 
-  private static abstract class staffingBaseDescriptorSupplier
+  private static abstract class StaffingBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
-    staffingBaseDescriptorSupplier() {}
+    StaffingBaseDescriptorSupplier() {}
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return com.project.Staffing.getDescriptor();
+      return com.project.StaffingImpl.getDescriptor();
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
-      return getFileDescriptor().findServiceByName("staffing");
+      return getFileDescriptor().findServiceByName("Staffing");
     }
   }
 
-  private static final class staffingFileDescriptorSupplier
-      extends staffingBaseDescriptorSupplier {
-    staffingFileDescriptorSupplier() {}
+  private static final class StaffingFileDescriptorSupplier
+      extends StaffingBaseDescriptorSupplier {
+    StaffingFileDescriptorSupplier() {}
   }
 
-  private static final class staffingMethodDescriptorSupplier
-      extends staffingBaseDescriptorSupplier
+  private static final class StaffingMethodDescriptorSupplier
+      extends StaffingBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
     private final String methodName;
 
-    staffingMethodDescriptorSupplier(String methodName) {
+    StaffingMethodDescriptorSupplier(String methodName) {
       this.methodName = methodName;
     }
 
@@ -265,11 +265,11 @@ public final class staffingGrpc {
   public static io.grpc.ServiceDescriptor getServiceDescriptor() {
     io.grpc.ServiceDescriptor result = serviceDescriptor;
     if (result == null) {
-      synchronized (staffingGrpc.class) {
+      synchronized (StaffingGrpc.class) {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new staffingFileDescriptorSupplier())
+              .setSchemaDescriptor(new StaffingFileDescriptorSupplier())
               .addMethod(getStaffRequiredMethod())
               .build();
         }
