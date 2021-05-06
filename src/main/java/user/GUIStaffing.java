@@ -75,7 +75,7 @@ public class GUIStaffing implements ActionListener
 			JLabel label = new JLabel("Enter Time")	;
 			panel.add(label);
 			panel.add(Box.createRigidArea(new Dimension(10, 0)));
-			entry2 = new JTextField("",10);
+			entry2 = new JTextField("");
 			panel.add(entry2);
 			panel.add(Box.createRigidArea(new Dimension(10, 0)));
 
@@ -119,7 +119,7 @@ public class GUIStaffing implements ActionListener
 			frame.setVisible(true);
 		}
 
-
+		@Override
 		public void actionPerformed(ActionEvent e) 
 		{
 			JButton button = (JButton)e.getSource();
@@ -138,7 +138,6 @@ public class GUIStaffing implements ActionListener
 
 				//preparing message to send
 				Staffing.TimeLevel request1 = Staffing.TimeLevel.newBuilder().setTime(entry1.getText()).build();
-				text1 = entry1.getText();
 				
 				Staffing.TimeLevel request2 = Staffing.TimeLevel.newBuilder().setLevel(entry2.getText()).build();
 
@@ -154,4 +153,25 @@ public class GUIStaffing implements ActionListener
 				
 			}
 		}
+		
+		public String getText1()
+		{
+			return text1;
+		}
+		
+		public String getText2()
+		{
+			return text2;
+		}
+		
+		
+		public void setText1(String s)
+		{
+			text1=s;
+		}
+		public void setText2(String s)
+		{
+			text2=s;
+		}
+		
 }

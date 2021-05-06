@@ -1,11 +1,15 @@
 syntax = "proto3";
 
+option java_multiple_files = true;
 option java_package = "com.project";
+option java_outer_classname = "StaffingImpl";
 
-service staffing
+package project;
+
+service Staffing
 {
-	rpc StaffRequired(TimeLevel) returns (APIResponse);
-}
+	rpc StaffRequired(TimeLevel) returns (APIResponse) {}
+} 
 
 message TimeLevel
 {
