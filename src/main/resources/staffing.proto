@@ -8,7 +8,7 @@ package project;
 
 service Staffing
 {
-	rpc staffRequired(TimeLevel) returns (APIResponse) {}
+	rpc StaffRequired(TimeLevel) returns (APIResponse) {}
 } 
 
 message TimeLevel

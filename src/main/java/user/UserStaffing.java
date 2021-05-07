@@ -1,14 +1,15 @@
 package user;
 import java.io.IOException;
 
+
 import com.project.Staffing.*;
-import com.project.staffingGrpc.*;
+import com.project.StaffingGrpc.*;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
 
-public class UserStaffing extends staffingImplBase
+public class UserStaffing extends StaffingImplBase
 {
 	int levelNumber = 0;
 	int timeNumber = 0;
@@ -24,26 +25,6 @@ public class UserStaffing extends staffingImplBase
 		
 
 		APIResponse.Builder response = APIResponse.newBuilder();
-		
-		try 
-		{
-			timeNumber = Integer.parseInt(user.GUIStaffing.text1);
-		}
-		catch(Exception e) 
-		{
-			System.out.println("Please enter time as an number");
-		}
-		
-		//set levelNumber
-		try 
-		{
-			levelNumber = Integer.parseInt(request.getLevel());
-		}
-		
-		catch(Exception e) 
-		{
-			System.out.println("Please enter level as an number");
-		}
 		
 		staffRequiredFunction();
 
@@ -118,8 +99,6 @@ public class UserStaffing extends staffingImplBase
 			}
 		
 		System.out.println("Time is " + timeNumber);
-		System.out.println("Text1 is " + user.GUIStaffing.text1);
-		System.out.println("Text2 is " + user.GUIStaffing.text2);
 		
 		nursesNeeded = doctorsNeeded*2;
 	}

@@ -22,14 +22,12 @@ import io.grpc.ManagedChannelBuilder;
 
 public class GUIStaffing implements ActionListener
 {
-		public static String text1;
-		public static String text2;
 		
 		private JTextField entry1, reply1;
-		private JTextField entry2, reply2;
+		private JTextField entry2;
 
 
-		private JPanel getStaffingJPanel() {
+		private JPanel getStaffingJPanel1() {
 
 			JPanel panel = new JPanel();
 
@@ -53,10 +51,6 @@ public class GUIStaffing implements ActionListener
 			
 			panel.setLayout(boxlayout);
 			
-			//setter for entry 1
-			text1 = entry1.getText();
-			text2 = reply1.getText();
-			
 			return panel;
 			
 
@@ -64,7 +58,7 @@ public class GUIStaffing implements ActionListener
 			
 		}
 
-		private JPanel getService2JPanel() {
+		private JPanel getStaffingJPanel2() {
 
 			JPanel panel = new JPanel();
 
@@ -105,8 +99,8 @@ public class GUIStaffing implements ActionListener
 			// Set border for the panel
 			panel.setBorder(new EmptyBorder(new Insets(50, 100, 50, 100)));
 		
-			panel.add( getStaffingJPanel() );
-			panel.add( getService2JPanel() );
+			panel.add( getStaffingJPanel1() );
+			panel.add( getStaffingJPanel2() );
 
 			// Set size for the frame
 			frame.setSize(300, 300);
@@ -132,16 +126,14 @@ public class GUIStaffing implements ActionListener
 				 * 
 				 */
 				ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50051).usePlaintext().build();
-				staffingGrpc.staffingBlockingStub blockingStub = staffingGrpc.newBlockingStub(channel);
+				StaffingGrpc.StaffingBlockingStub blockingStub = StaffingGrpc.newBlockingStub(channel);
 
 				//preparing message to send
-				Staffing.TimeLevel request1 = Staffing.TimeLevel.newBuilder().setTime(entry1.getText()).build();
-				
-				Staffing.TimeLevel request2 = Staffing.TimeLevel.newBuilder().setLevel(entry2.getText()).build();
+				com.project.TimeLevel request1 = com.project.TimeLevel.newBuilder().setTime(entry1.getText()).build();
+				com.project.TimeLevel request2 = com.project.TimeLevel.newBuilder().setLevel(entry2.getText()).build();
 
 				//Retrieving reply from service
-				Staffing.APIResponse response1 = blockingStub.staffRequired(request1);
-				Staffing.APIResponse response2 = blockingStub.staffRequired(request2);
+				com.project.APIResponse response1 = blockingStub.staffRequired(request1);
 
 				reply1.setText( String.valueOf(response1) );
 			
@@ -152,24 +144,24 @@ public class GUIStaffing implements ActionListener
 			}
 		}
 		
-		public String getText1()
-		{
-			return text1;
-		}
-		
-		public String getText2()
-		{
-			return text2;
-		}
-		
-		
-		public void setText1(String s)
-		{
-			text1=s;
-		}
-		public void setText2(String s)
-		{
-			text2=s;
-		}
+//		public String getText1()
+//		{
+//			return text1;
+//		}
+//		
+//		public String getText2()
+//		{
+//			return text2;
+//		}
+//		
+//		
+//		public void setText1(String s)
+//		{
+//			text1=s;
+//		}
+//		public void setText2(String s)
+//		{
+//			text2=s;
+//		}
 		
 }
