@@ -16,34 +16,33 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import com.project.Staffing.*;
-import com.project.Staffing.TimeLevel;
-import com.project.StaffingGrpc;
+import com.project.PatientOrg.VacantBedResponse;
+import com.project.patientOrgGrpc;
+
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
-public class GUIStaffing implements ActionListener
+public class GUIPatientOrg implements ActionListener
 {
 		
 		private JTextField entry1, reply1;
-		private JTextField entry2;
 
 
-		private JPanel getStaffingJPanel1() {
+		private JPanel getPatientOrgJPanel() {
 
 			JPanel panel = new JPanel();
 
 			BoxLayout boxlayout = new BoxLayout(panel, BoxLayout.X_AXIS);
 
-			JLabel label = new JLabel("Enter Shift Code (Time) 1-3")	;
+			JLabel label = new JLabel("Enter Bed for Patient")	;
 			panel.add(label);
 			panel.add(Box.createRigidArea(new Dimension(10, 0)));
 			entry1 = new JTextField("");
 			panel.add(entry1);
 			panel.add(Box.createRigidArea(new Dimension(10, 0)));
 
-			JButton button = new JButton("Invoke Staffing Service");
+			JButton button = new JButton("Invoke Patient Org Service");
 			button.addActionListener(this);
 			panel.add(button);
 			panel.add(Box.createRigidArea(new Dimension(10, 0)));
@@ -55,30 +54,12 @@ public class GUIStaffing implements ActionListener
 			panel.setLayout(boxlayout);
 			
 			return panel;
-
+			
 		}
 
-		private JPanel getStaffingJPanel2() {
-
-			JPanel panel = new JPanel();
-
-			BoxLayout boxlayout = new BoxLayout(panel, BoxLayout.X_AXIS);
-
-			JLabel label = new JLabel("Enter Level")	;
-			panel.add(label);
-			panel.add(Box.createRigidArea(new Dimension(10, 0)));
-			entry2 = new JTextField("");
-			panel.add(entry2);
-			panel.add(Box.createRigidArea(new Dimension(10, 0)));
-
-			panel.setLayout(boxlayout);
-
-			return panel;
-
-		}
 		public static void main(String[] args) {
 
-			GUIStaffing gui = new GUIStaffing();
+			GUIPatientOrg gui = new GUIPatientOrg();
 
 			gui.build();
 		}
@@ -99,8 +80,7 @@ public class GUIStaffing implements ActionListener
 			// Set border for the panel
 			panel.setBorder(new EmptyBorder(new Insets(50, 100, 50, 100)));
 		
-			panel.add( getStaffingJPanel1() );
-			panel.add( getStaffingJPanel2() );
+			panel.add( getPatientOrgJPanel() );
 
 			// Set size for the frame
 			frame.setSize(300, 300);
@@ -115,24 +95,22 @@ public class GUIStaffing implements ActionListener
 		public void actionPerformed(ActionEvent e) 
 		{
 
-			System.out.println("Staffing Service to be invoked ...");
-			
+			System.out.println("Patient Bed Assignment Service to be invoked ...");
+			System.out.println("Bed Selected is: " + entry1.getText());
+		
 			/*
 			 * 
 			 */
-			ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50053).usePlaintext().build();
-			StaffingGrpc.StaffingBlockingStub blockingStub = StaffingGrpc.newBlockingStub(channel);
+			ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50052).usePlaintext().build();
+			patientOrgGrpc.patientOrgBlockingStub blockingStub = patientOrgGrpc.newBlockingStub(channel);
 
 			//preparing message to send
-			Staffing.TimeLevel request1 = TimeLevel.newBuilder().setTime(entry1.getText()).build();
-			Staffing.TimeLevel request2 = TimeLevel.newBuilder().setLevel(entry2.getText()).build();
+			com.project.PatientOrg.VacantBedInput request = com.project.PatientOrg.VacantBedInput.newBuilder().setRoomType(entry1.getText()).build();
 
 			//Retrieving reply from service
-			com.project.Inventory.QuantityOutput response1 = blockingStub.inventoryChange(request1);
-			com.project.Inventory.QuantityOutput response2 = blockingStub.inventoryChange(request2);
+			VacantBedResponse response = blockingStub.vacantBed(request);
 			
-			reply1.setText(String.valueOf(response1.getResponseText()) );
+			reply1.setText(String.valueOf(response.getResponseText()) );
 
 		}
-		
 }

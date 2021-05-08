@@ -24,33 +24,33 @@ public final class StaffingGrpc {
 
   private StaffingGrpc() {}
 
-  public static final String SERVICE_NAME = "project.Staffing";
+  public static final String SERVICE_NAME = "Staffing";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.project.TimeLevel,
-      com.project.APIResponse> getStaffRequiredMethod;
+  private static volatile io.grpc.MethodDescriptor<com.project.StaffingOuterClass.TimeLevel,
+      com.project.StaffingOuterClass.APIResponse> getStaffRequiredMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "staffRequired",
-      requestType = com.project.TimeLevel.class,
-      responseType = com.project.APIResponse.class,
+      requestType = com.project.StaffingOuterClass.TimeLevel.class,
+      responseType = com.project.StaffingOuterClass.APIResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.project.TimeLevel,
-      com.project.APIResponse> getStaffRequiredMethod() {
-    io.grpc.MethodDescriptor<com.project.TimeLevel, com.project.APIResponse> getStaffRequiredMethod;
+  public static io.grpc.MethodDescriptor<com.project.StaffingOuterClass.TimeLevel,
+      com.project.StaffingOuterClass.APIResponse> getStaffRequiredMethod() {
+    io.grpc.MethodDescriptor<com.project.StaffingOuterClass.TimeLevel, com.project.StaffingOuterClass.APIResponse> getStaffRequiredMethod;
     if ((getStaffRequiredMethod = StaffingGrpc.getStaffRequiredMethod) == null) {
       synchronized (StaffingGrpc.class) {
         if ((getStaffRequiredMethod = StaffingGrpc.getStaffRequiredMethod) == null) {
           StaffingGrpc.getStaffRequiredMethod = getStaffRequiredMethod = 
-              io.grpc.MethodDescriptor.<com.project.TimeLevel, com.project.APIResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.project.StaffingOuterClass.TimeLevel, com.project.StaffingOuterClass.APIResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "project.Staffing", "staffRequired"))
+                  "Staffing", "staffRequired"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.project.TimeLevel.getDefaultInstance()))
+                  com.project.StaffingOuterClass.TimeLevel.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.project.APIResponse.getDefaultInstance()))
+                  com.project.StaffingOuterClass.APIResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new StaffingMethodDescriptorSupplier("staffRequired"))
                   .build();
           }
@@ -88,8 +88,8 @@ public final class StaffingGrpc {
 
     /**
      */
-    public void staffRequired(com.project.TimeLevel request,
-        io.grpc.stub.StreamObserver<com.project.APIResponse> responseObserver) {
+    public void staffRequired(com.project.StaffingOuterClass.TimeLevel request,
+        io.grpc.stub.StreamObserver<com.project.StaffingOuterClass.APIResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getStaffRequiredMethod(), responseObserver);
     }
 
@@ -99,8 +99,8 @@ public final class StaffingGrpc {
             getStaffRequiredMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.project.TimeLevel,
-                com.project.APIResponse>(
+                com.project.StaffingOuterClass.TimeLevel,
+                com.project.StaffingOuterClass.APIResponse>(
                   this, METHODID_STAFF_REQUIRED)))
           .build();
     }
@@ -126,8 +126,8 @@ public final class StaffingGrpc {
 
     /**
      */
-    public void staffRequired(com.project.TimeLevel request,
-        io.grpc.stub.StreamObserver<com.project.APIResponse> responseObserver) {
+    public void staffRequired(com.project.StaffingOuterClass.TimeLevel request,
+        io.grpc.stub.StreamObserver<com.project.StaffingOuterClass.APIResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getStaffRequiredMethod(), getCallOptions()), request, responseObserver);
     }
@@ -153,7 +153,7 @@ public final class StaffingGrpc {
 
     /**
      */
-    public com.project.APIResponse staffRequired(com.project.TimeLevel request) {
+    public com.project.StaffingOuterClass.APIResponse staffRequired(com.project.StaffingOuterClass.TimeLevel request) {
       return blockingUnaryCall(
           getChannel(), getStaffRequiredMethod(), getCallOptions(), request);
     }
@@ -179,8 +179,8 @@ public final class StaffingGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.project.APIResponse> staffRequired(
-        com.project.TimeLevel request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.project.StaffingOuterClass.APIResponse> staffRequired(
+        com.project.StaffingOuterClass.TimeLevel request) {
       return futureUnaryCall(
           getChannel().newCall(getStaffRequiredMethod(), getCallOptions()), request);
     }
@@ -206,8 +206,8 @@ public final class StaffingGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_STAFF_REQUIRED:
-          serviceImpl.staffRequired((com.project.TimeLevel) request,
-              (io.grpc.stub.StreamObserver<com.project.APIResponse>) responseObserver);
+          serviceImpl.staffRequired((com.project.StaffingOuterClass.TimeLevel) request,
+              (io.grpc.stub.StreamObserver<com.project.StaffingOuterClass.APIResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -231,7 +231,7 @@ public final class StaffingGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return com.project.StaffingImpl.getDescriptor();
+      return com.project.StaffingOuterClass.getDescriptor();
     }
 
     @java.lang.Override

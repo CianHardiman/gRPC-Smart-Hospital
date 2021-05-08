@@ -81,7 +81,7 @@ public class UserPatientOrg extends patientOrgImplBase
 		}
 		else
 		{
-			response.setResponseCode(4).setResponseText("Please enter 1 for an emergency bed, 2 for a private bed and 3 for a shared bed");
+			response.setResponseCode(4).setResponseText("Please enter 1 for an emergency bed, 2 for a private bed and 3 for a shared room");
 		}
 			
 		responseObserver.onNext(response.build());
