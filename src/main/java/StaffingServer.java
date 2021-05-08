@@ -1,18 +1,28 @@
+
+
 import java.io.IOException;
 
+import com.project.StaffingGrpc;
 import com.project.Staffing.APIResponse;
 import com.project.Staffing.TimeLevel;
+import com.project.StaffingGrpc.StaffingImplBase;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
-import user.UserStaffing;
 
-public class StaffingServer
+import java.text.*;
+import java.util.*;
+
+
+public class StaffingServer extends StaffingImplBase
 {
 	public static void main(String[] args) throws IOException, InterruptedException
 	{
-		Server server = ServerBuilder.forPort(50051).addService(new UserStaffing()).build();
+		
+		StaffingServer staffingServer = new StaffingServer();
+		
+		Server server = ServerBuilder.forPort(50051).addService(staffingServer).build();
 		
 		server.start();
 		
@@ -22,7 +32,7 @@ public class StaffingServer
 	}
 	
 //	@Override
-	public void staffRequired(TimeLevel request, StreamObserver<APIResponse> responseObserver) 
+	public void staffRequired(TimeLevel request1, TimeLevel request2,  StreamObserver<APIResponse> responseObserver) 
 	{
 		
 		System.out.println("Please enter Level and Time (Shift) number (1-3)");
@@ -32,8 +42,8 @@ public class StaffingServer
 
 		APIResponse.Builder response = APIResponse.newBuilder();
 		
-		int levelNumber = 0;
-		int timeNumber = 0;
+		int levelNumber = Integer.parseInt(request2.getLevel());
+		int timeNumber = Integer.parseInt(request1.getTime());
 		int nursesNeeded = 0;
 		int doctorsNeeded = 0;
 		

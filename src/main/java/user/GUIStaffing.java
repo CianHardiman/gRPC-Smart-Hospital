@@ -16,7 +16,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import com.project.*;
+import com.project.StaffingGrpc;
+
+
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
@@ -114,34 +116,26 @@ public class GUIStaffing implements ActionListener
 		@Override
 		public void actionPerformed(ActionEvent e) 
 		{
-			JButton button = (JButton)e.getSource();
-			String label = button.getActionCommand();  
 
-			if (label.equals("Invoke Staffing Service")) 
-			{
-				System.out.println("Staffing Service to be invoked ...");
+			System.out.println("Staffing Service to be invoked ...");
+			System.out.println("Level input is: " + entry1.getText());
+			System.out.println("Time imput is: " + entry2.getText());
+		
+			/*
+			 * 
+			 */
+			ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50051).usePlaintext().build();
+			StaffingGrpc.StaffingBlockingStub blockingStub = StaffingGrpc.newBlockingStub(channel);
 
+			//preparing message to send
+			com.project.TimeLevel request1 = com.project.TimeLevel.newBuilder().setTime(entry1.getText()).build();
+//			com.project.TimeLevel request2 = com.project.TimeLevel.newBuilder().setLevel(entry2.getText()).build();
+
+			//Retrieving reply from service
+			com.project.APIResponse response = blockingStub.staffRequired(request1);
 			
-				/*
-				 * 
-				 */
-				ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50051).usePlaintext().build();
-				StaffingGrpc.StaffingBlockingStub blockingStub = StaffingGrpc.newBlockingStub(channel);
+			reply1.setText(String.valueOf(response.getResponseText()) );
 
-				//preparing message to send
-				com.project.TimeLevel request1 = com.project.TimeLevel.newBuilder().setTime(entry1.getText()).build();
-				com.project.TimeLevel request2 = com.project.TimeLevel.newBuilder().setLevel(entry2.getText()).build();
-
-				//Retrieving reply from service
-				com.project.APIResponse response1 = blockingStub.staffRequired(request1);
-
-				reply1.setText( String.valueOf(response1) );
-			
-			}
-			else
-			{
-				
-			}
 		}
 		
 //		public String getText1()

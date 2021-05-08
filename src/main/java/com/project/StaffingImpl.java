@@ -42,7 +42,7 @@ public final class StaffingImpl {
       "\n\004time\030\001 \001(\t\022\r\n\005level\030\002 \001(\t\"Z\n\013APIRespon" +
       "se\022\024\n\014responseText\030\001 \001(\t\022\024\n\014responseCode" +
       "\030\002 \001(\005\022\017\n\007doctors\030\003 \001(\t\022\016\n\006nurses\030\004 \001(\t\"" +
-      "\007\n\005Empty2G\n\010Staffing\022;\n\rStaffRequired\022\022." +
+      "\007\n\005Empty2G\n\010Staffing\022;\n\rstaffRequired\022\022." +
       "project.TimeLevel\032\024.project.APIResponse\"" +
       "\000B\035\n\013com.projectB\014StaffingImplP\001b\006proto3"
     };
