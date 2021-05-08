@@ -4,7 +4,7 @@ import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import user.UserStaffing;
 
-public class StaffingServer
+public class Staffing1Server
 {
 	public static void main(String[] args) throws IOException, InterruptedException
 	{

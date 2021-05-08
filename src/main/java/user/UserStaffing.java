@@ -1,14 +1,16 @@
 package user;
 import java.io.IOException;
 
-import com.project.Staffing.*;
 import com.project.StaffingGrpc.*;
+import com.project.StaffingOuterClass.APIResponse;
+import com.project.StaffingOuterClass.TimeLevel;
+import com.project.patientOrgGrpc.patientOrgImplBase;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
 
-public class UserStaffing
+public class UserStaffing extends StaffingImplBase
 {
 	int levelNumber = 0;
 	int timeNumber = 0;
@@ -25,24 +27,25 @@ public class UserStaffing
 
 		APIResponse.Builder response = APIResponse.newBuilder();
 		
-		staffRequiredFunction();
-
-		if ((levelNumber<=3 && levelNumber>=1)&&(timeNumber<=3 && timeNumber>=1))
+		try
 		{
-			response.setResponseCode(0).setResponseText("Nurses Needed: " + nursesNeeded + ". Doctors Needed: " + doctorsNeeded + ".");
+			timeNumber = Integer.parseInt(request.getTime());
 		}
-		else
+		catch(Exception e) 
 		{
-			response.setResponseCode(1).setResponseText("Please ensure that time and level are both 1, 2 or 3");
+			System.out.println("Please enter time as an integer");
 		}
 		
-		responseObserver.onNext(response.build());
-		responseObserver.onCompleted();
-	}
-	
-	public void staffRequiredFunction()
-	{
-			
+		try
+		{
+			levelNumber = Integer.parseInt(request.getLevel());
+		}
+		catch(Exception e) 
+		{
+			System.out.println("Please enter time as an integer");
+		}
+		
+		
 		if(levelNumber==1)
 		{
 			if (timeNumber == 1 || timeNumber == 3)
@@ -100,5 +103,18 @@ public class UserStaffing
 		System.out.println("Time is " + timeNumber);
 		
 		nursesNeeded = doctorsNeeded*2;
+
+		if ((levelNumber<=3 && levelNumber>=1)&&(timeNumber<=3 && timeNumber>=1))
+		{
+			response.setResponseCode(0).setResponseText("Nurses Needed: " + nursesNeeded + ". Doctors Needed: " + doctorsNeeded + ".");
+		}
+		else
+		{
+			response.setResponseCode(1).setResponseText("Please ensure that time and level are both 1, 2 or 3");
+		}
+		
+		responseObserver.onNext(response.build());
+		responseObserver.onCompleted();
 	}
+	
 }

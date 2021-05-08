@@ -16,8 +16,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import com.project.Staffing.*;
-import com.project.Staffing.TimeLevel;
+import com.project.*;
+
 import com.project.StaffingGrpc;
 
 import io.grpc.ManagedChannel;
@@ -120,16 +120,16 @@ public class GUIStaffing implements ActionListener
 			/*
 			 * 
 			 */
-			ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50053).usePlaintext().build();
+			ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50051).usePlaintext().build();
 			StaffingGrpc.StaffingBlockingStub blockingStub = StaffingGrpc.newBlockingStub(channel);
 
 			//preparing message to send
-			Staffing.TimeLevel request1 = TimeLevel.newBuilder().setTime(entry1.getText()).build();
-			Staffing.TimeLevel request2 = TimeLevel.newBuilder().setLevel(entry2.getText()).build();
+			com.project.StaffingOuterClass.TimeLevel request1 = com.project.StaffingOuterClass.TimeLevel.newBuilder().setTime(entry1.getText()).build();
+			com.project.StaffingOuterClass.TimeLevel request2 = com.project.StaffingOuterClass.TimeLevel.newBuilder().setLevel(entry2.getText()).build();
 
 			//Retrieving reply from service
-			com.project.Inventory.QuantityOutput response1 = blockingStub.inventoryChange(request1);
-			com.project.Inventory.QuantityOutput response2 = blockingStub.inventoryChange(request2);
+			com.project.StaffingOuterClass.APIResponse response1 = blockingStub.staffRequired(request1);
+			com.project.StaffingOuterClass.APIResponse response2 = blockingStub.staffRequired(request2);
 			
 			reply1.setText(String.valueOf(response1.getResponseText()) );
 
